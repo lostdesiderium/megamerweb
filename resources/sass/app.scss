@@ -1,0 +1,57 @@
+$background_color_dark: #292121;
+$background_color_dark_rgba: rgb(41,33,33);
+$accent_color: #00DC8A;
+$font_family_content: 'Ubuntu', sans-serif;
+$font_family_header: 'Dosis', sans-serif;
+$text_color: #A0B4AC;
+$font_big_title: 36px;
+$font_normal_title: 24px;
+$font_big_text: 20px;
+$font_normal_text: 16px;
+$linear_gradient_bottom_skyish: linear-gradient(to bottom, $background_color_dark, #014d5e);
+
+html{
+    position: relative;
+    min-height: 100%;
+    min-width: 100%;
+}
+
+body{
+    position: relative;
+    min-height: 100%;
+    min-width: 100%;
+}
+
+#root{
+    position: relative;
+    min-height: 100%;
+    min-width: 100%;
+}
+
+.container-fluid{
+    min-height: 100vh;
+    min-width: 100%;
+    margin: 0;
+    padding: 0 !important;  
+}
+
+a, a:visited{
+    text-decoration: none;
+}
+
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+// react components styling
+@import 'sideNavbar';
+@import 'topNavbar';
+@import 'landingPage';
+@import 'loginComponent';
+
+
