@@ -46,10 +46,11 @@
                 border: 1px solid grey;
                 border-radius: 16px;
                 padding: 16px;
-                min-width: 500px;
+                min-width: 350px;
                 min-height: 500px;
-                max-height: 500px;
-                max-width: 500px;
+                max-width: 40vw;
+                //max-height: 500px;
+                //max-width: 500px;
 
                 // FLEXBOX
                 display: -ms-flexbox;
@@ -77,45 +78,62 @@
                     //padding: 24px;
                 }
 
-                .email-field{
+                .email-username-div {
                     width: calc(100% - 64px);
-                    //margin: 0 32px 0 32px;
-                    background-color: rgba(41,33,33, 0.65);
-                    padding: 8px 16px;                   
-                    color: grey;
-                    border: none;
-                    border-bottom: 1px solid $accent_color;
-                    border-radius: 4px;
-                }
 
-                .password-span-row{
-                    width: 100%;
-                    position: relative;
-
-                    .password-field{
-                        width: calc(100% - 64px);
-                        color: grey;
-                        margin: 32px 0 0 32px;
+                    .email-or-username-field{
+                        width: 100%;
+                        //margin: 0 32px 0 32px;
                         background-color: rgba(41,33,33, 0.65);
-                        padding: 8px 16px;                   
+                        padding: 8px 16px;
+                        color: grey;
                         border: none;
                         border-bottom: 1px solid $accent_color;
                         border-radius: 4px;
                     }
+                }
 
-                    .ic-eye{
-                        z-index: 2;
-                        cursor: pointer;
-                        position: absolute;
-                        padding: 32px 0 0 0;
-                        margin-left: -32px;
+                .password-div{
+                    width: 100%;
+                    margin-top: 32px;
 
-                        &:hover{
-                            opacity: 0.65;
+                    .password-label{
+                        margin-left: 32px;
+                    }
+
+                    .password-span-row{
+                        width: 100%;
+                        position: relative;
+
+                        .password-field{
+                            width: calc(100% - 64px);
+                            color: grey;
+                            margin: 0 0 0 32px;
+                            background-color: rgba(41,33,33, 0.65);
+                            padding: 8px 16px;
+                            border: none;
+                            border-bottom: 1px solid $accent_color;
+                            border-radius: 4px;
+                        }
+
+                        .ic-eye{
+                            z-index: 5;
+                            min-height: 24px;
+                            min-width: 24px;
+                            cursor: pointer;
+                            position: absolute;
+                            //padding: 8px 0 0 0;
+                            margin-top: 8px;
+                            margin-left: -32px;
+
+                            &:hover{
+                                opacity: 0.65;
+                            }
                         }
                     }
                 }
-                
+
+
 
                 .submit-button{
                     margin-top: 32px;

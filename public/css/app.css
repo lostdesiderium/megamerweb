@@ -30,6 +30,19 @@ a:visited {
   text-decoration: none;
 }
 
+.error-box {
+  width: calc(100% - 64px);
+  color: orangered;
+  text-align: left;
+  border: 1px solid grey;
+  border-radius: 4px;
+  padding: 16px 32px;
+  margin-bottom: 16px;
+  font-size: 12px;
+  transition: 0.25s ease-in-out;
+  white-space: pre-line;
+}
+
 /*!
  * Bootstrap v4.3.1 (https://getbootstrap.com/)
  * Copyright 2011-2019 The Bootstrap Authors
@@ -10971,10 +10984,9 @@ a.text-dark:focus {
   border: 1px solid grey;
   border-radius: 16px;
   padding: 16px;
-  min-width: 500px;
+  min-width: 350px;
   min-height: 500px;
-  max-height: 500px;
-  max-width: 500px;
+  max-width: 40vw;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -10988,8 +11000,12 @@ a.text-dark:focus {
   opacity: 0.9;
 }
 
-.page-container .login-row .login-col .login-div .email-field {
+.page-container .login-row .login-col .login-div .email-username-div {
   width: calc(100% - 64px);
+}
+
+.page-container .login-row .login-col .login-div .email-username-div .email-or-username-field {
+  width: 100%;
   background-color: rgba(41, 33, 33, 0.65);
   padding: 8px 16px;
   color: grey;
@@ -10998,15 +11014,24 @@ a.text-dark:focus {
   border-radius: 4px;
 }
 
-.page-container .login-row .login-col .login-div .password-span-row {
+.page-container .login-row .login-col .login-div .password-div {
+  width: 100%;
+  margin-top: 32px;
+}
+
+.page-container .login-row .login-col .login-div .password-div .password-label {
+  margin-left: 32px;
+}
+
+.page-container .login-row .login-col .login-div .password-div .password-span-row {
   width: 100%;
   position: relative;
 }
 
-.page-container .login-row .login-col .login-div .password-span-row .password-field {
+.page-container .login-row .login-col .login-div .password-div .password-span-row .password-field {
   width: calc(100% - 64px);
   color: grey;
-  margin: 32px 0 0 32px;
+  margin: 0 0 0 32px;
   background-color: rgba(41, 33, 33, 0.65);
   padding: 8px 16px;
   border: none;
@@ -11014,15 +11039,17 @@ a.text-dark:focus {
   border-radius: 4px;
 }
 
-.page-container .login-row .login-col .login-div .password-span-row .ic-eye {
-  z-index: 2;
+.page-container .login-row .login-col .login-div .password-div .password-span-row .ic-eye {
+  z-index: 5;
+  min-height: 24px;
+  min-width: 24px;
   cursor: pointer;
   position: absolute;
-  padding: 32px 0 0 0;
+  margin-top: 8px;
   margin-left: -32px;
 }
 
-.page-container .login-row .login-col .login-div .password-span-row .ic-eye:hover {
+.page-container .login-row .login-col .login-div .password-div .password-span-row .ic-eye:hover {
   opacity: 0.65;
 }
 
@@ -11044,5 +11071,123 @@ a.text-dark:focus {
 .page-container .login-row .login-col .login-div .submit-button:hover {
   background-position: left bottom;
   color: black;
+}
+
+.background-image-signup {
+  position: fixed;
+  z-index: 0;
+  min-height: 100vh;
+  max-height: 100vh;
+  min-width: 100vw;
+  max-width: 100vw;
+  background-image: url(/images/signup_background.jpg?0d86e2669649cf01dc81cdf476a01b5f);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  opacity: 0.3;
+}
+
+.required-symbol {
+  color: red;
+  font-weight: bold;
+}
+
+.label {
+  color: white;
+  font-size: 12px;
+  margin: 0px;
+  padding-bottom: -4px;
+  padding-left: 16px;
+}
+
+.email-div {
+  width: calc(100% - 64px);
+}
+
+.email-div .email-field {
+  width: 100%;
+  background-color: rgba(41, 33, 33, 0.65);
+  padding: 8px 16px;
+  color: grey;
+  border: none;
+  border-bottom: 1px solid #00DC8A;
+  border-radius: 4px;
+}
+
+.username-div {
+  width: calc(100% - 64px);
+  margin-top: 32px;
+}
+
+.username-div .username-field {
+  width: 100%;
+  background-color: rgba(41, 33, 33, 0.65);
+  padding: 8px 16px;
+  color: grey;
+  border: none;
+  border-bottom: 1px solid #00DC8A;
+  border-radius: 4px;
+}
+
+.password-div {
+  width: 100%;
+  margin-top: 32px;
+  position: relative;
+}
+
+.password-div .password-label {
+  margin-left: 32px;
+}
+
+.password-div .password-span-row {
+  width: 100%;
+}
+
+.password-div .password-span-row .password-field-signup {
+  width: calc(100% - 64px);
+  color: grey;
+  margin: 0 0 0 32px;
+  background-color: rgba(41, 33, 33, 0.65);
+  padding: 8px 16px;
+  border: none;
+  border-bottom: 1px solid #00DC8A;
+  border-radius: 4px;
+}
+
+.password-div .password-span-row .ic-eye-signup {
+  z-index: 5;
+  min-height: 24px;
+  min-width: 24px;
+  cursor: pointer;
+  position: absolute;
+  margin: 8px 0 0 -32px;
+}
+
+.password-div .password-span-row .ic-eye-signup:hover {
+  opacity: 0.65;
+}
+
+.repeat-password-div {
+  width: 100%;
+  margin-top: 32px;
+}
+
+.repeat-password-div .repeat-password-label {
+  margin-left: 32px;
+}
+
+.repeat-password-div .repeat-password-span-row {
+  width: 100%;
+}
+
+.repeat-password-div .repeat-password-span-row .repeat-password-field {
+  width: calc(100% - 64px);
+  color: grey;
+  background-color: rgba(41, 33, 33, 0.65);
+  margin-left: 32px;
+  padding: 8px 16px;
+  border: none;
+  border-bottom: 1px solid #00DC8A;
+  border-radius: 4px;
 }
 

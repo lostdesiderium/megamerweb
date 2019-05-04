@@ -8,6 +8,8 @@ $font_big_title: 36px;
 $font_normal_title: 24px;
 $font_big_text: 20px;
 $font_normal_text: 16px;
+$font_small_text: 14px;
+$font_very_small_text: 12px;
 $linear_gradient_bottom_skyish: linear-gradient(to bottom, $background_color_dark, #014d5e);
 
 html{
@@ -32,11 +34,30 @@ body{
     min-height: 100vh;
     min-width: 100%;
     margin: 0;
-    padding: 0 !important;  
+    padding: 0 !important;
 }
 
 a, a:visited{
     text-decoration: none;
+}
+
+.error-box{
+    //display: none;
+    //height: 0px;
+    width: calc(100% - 64px);
+    color: orangered;
+    text-align: left;
+    border: 1px solid grey;
+    border-radius: 4px;
+    padding: 16px 32px;
+    margin-bottom: 16px;
+    font-size: $font_very_small_text;
+    transition: 0.25s ease-in-out;
+    white-space: pre-line;
+
+    .error-msg{
+
+    }
 }
 
 // Fonts
@@ -53,5 +74,6 @@ a, a:visited{
 @import 'topNavbar';
 @import 'landingPage';
 @import 'loginComponent';
+@import 'signupComponent';
 
 
