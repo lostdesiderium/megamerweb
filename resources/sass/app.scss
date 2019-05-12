@@ -41,6 +41,11 @@ a, a:visited{
     text-decoration: none;
 }
 
+ul, ol, dl {
+    margin: 0;
+    padding: 0
+}
+
 .error-box{
     //display: none;
     //height: 0px;

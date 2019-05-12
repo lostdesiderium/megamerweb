@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {Row, Col, Button} from 'react-bootstrap';
 
 export default class GamesPage extends Component{
 
@@ -13,10 +14,15 @@ export default class GamesPage extends Component{
     render(){
         return (
             <div className="page-container">
-                <h1 style={{color: 'black'}}>Games page </h1>
+                <div className="games-cards-container">
+                    <Row>
+                        <Col>
+                        </Col>
+                    </Row>
+                </div>
             </div>
         );
     };
 
-    
+
 }

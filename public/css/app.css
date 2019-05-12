@@ -30,6 +30,13 @@ a:visited {
   text-decoration: none;
 }
 
+ul,
+ol,
+dl {
+  margin: 0;
+  padding: 0;
+}
+
 .error-box {
   width: calc(100% - 64px);
   color: orangered;
@@ -10787,7 +10794,7 @@ a.text-dark:focus {
   width: 161px;
 }
 
-.top-navbar-container ul {
+.top-navbar-container .loggin-elements {
   list-style-type: none;
   height: 100%;
   width: 50%;
@@ -10802,34 +10809,97 @@ a.text-dark:focus {
   align-items: center;
 }
 
-.top-navbar-container ul a {
+.top-navbar-container .loggin-elements a {
   color: #A0B4AC;
 }
 
-.top-navbar-container ul a:hover {
+.top-navbar-container .loggin-elements a:hover {
   text-decoration: none;
   color: white;
 }
 
-.top-navbar-container ul a:visited {
+.top-navbar-container .loggin-elements a:visited {
   text-decoration: none;
 }
 
-.top-navbar-container ul li {
+.top-navbar-container .loggin-elements li {
   padding: 6px 20px;
   border-bottom: 1px solid #A0B4AC;
   border-radius: 6px;
   margin-left: 16px;
 }
 
-.top-navbar-container ul li:hover {
+.top-navbar-container .loggin-elements li:hover {
   background-color: rgba(255, 255, 255, 0.1);
   cursor: pointer;
   border-color: #00DC8A;
 }
 
-.top-navbar-container ul li:hover a {
+.top-navbar-container .loggin-elements li:hover a {
   color: white;
+}
+
+.top-navbar-container .account-widget {
+  height: 100%;
+  width: 50%;
+  display: flex;
+  float: right;
+  padding-right: 32px;
+  color: white;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  align-content: center;
+  align-items: center;
+}
+
+.top-navbar-container .account-widget .username-line {
+  color: white;
+  padding: 0 8px;
+}
+
+.top-navbar-container .account-widget .account-rounded-pic {
+  color: #A0B4AC;
+  padding: 0 8px;
+  cursor: pointer;
+}
+
+.top-navbar-container .account-widget .account-options-dropdown {
+  color: #A0B4AC;
+  height: 0px;
+  display: none;
+  transition: 0.25s ease-in-out;
+  position: absolute;
+  margin-left: -80px;
+  min-width: 10rem;
+  background-color: #292121;
+}
+
+.top-navbar-container .account-widget .account-options-dropdown .dropdown-ul {
+  list-style-type: none;
+  margin: 0;
+}
+
+.top-navbar-container .account-widget .account-options-dropdown .dropdown-ul li {
+  padding: 4px 8px;
+}
+
+.top-navbar-container .account-widget .account-options-dropdown .dropdown-ul li:hover {
+  border-left: 2px solid #00DC8A;
+}
+
+.top-navbar-container .account-widget .account-options-dropdown .dropdown-ul li a {
+  color: #A0B4AC;
+}
+
+.top-navbar-container .account-widget .account-options-dropdown .dropdown-ul li a:hover {
+  text-decoration: none;
+  color: white;
+}
+
+.top-navbar-container .account-widget .account-options-dropdown .dropdown-ul li a:visited {
+  text-decoration: none;
 }
 
 .page-container {
@@ -11100,6 +11170,11 @@ a.text-dark:focus {
   padding-left: 16px;
 }
 
+.input-div {
+  width: calc(100% - 64px);
+  margin-top: 32px;
+}
+
 .email-div {
   width: calc(100% - 64px);
 }
@@ -11114,11 +11189,6 @@ a.text-dark:focus {
   border-radius: 4px;
 }
 
-.username-div {
-  width: calc(100% - 64px);
-  margin-top: 32px;
-}
-
 .username-div .username-field {
   width: 100%;
   background-color: rgba(41, 33, 33, 0.65);
@@ -11127,12 +11197,6 @@ a.text-dark:focus {
   border: none;
   border-bottom: 1px solid #00DC8A;
   border-radius: 4px;
-}
-
-.password-div {
-  width: 100%;
-  margin-top: 32px;
-  position: relative;
 }
 
 .password-div .password-label {
@@ -11165,11 +11229,6 @@ a.text-dark:focus {
 
 .password-div .password-span-row .ic-eye-signup:hover {
   opacity: 0.65;
-}
-
-.repeat-password-div {
-  width: 100%;
-  margin-top: 32px;
 }
 
 .repeat-password-div .repeat-password-label {

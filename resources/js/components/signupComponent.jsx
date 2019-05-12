@@ -143,10 +143,29 @@ export default class SingupPage extends Component{
             Axios.post(uri, formData).then( (response) => {
                 console.log(response);
                 return response;
-            });
-            //.then(json => {
+            })
+            .then(json => {
+                if(json.data.success){
 
-            //});
+                    let user = {
+                        email: json.data.data.email,
+                        username: json.data.data.username,
+                        auth_token: json.data.data.auth_token,
+                        timestamp: new Date().toString()
+                    }
+
+                    let appState = {
+                        isLoggedIn: true,
+                        userData: user,
+                    }
+
+                    localStorage["appState"] = JSON.stringify(appState);
+                    /*this.setState({
+                        isLoggedIn: appState.isLoggedIn,
+                        user: appState.user
+                    })*/
+                }
+            });
         }
         else{
             this.state.errorMsg = validationResponse;
