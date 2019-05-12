@@ -79213,6 +79213,61 @@ module.exports = function(module) {
 
 /***/ }),
 
+/***/ "./resources/assets/backgrounds/apex_background_1920x1080.jpg":
+/*!********************************************************************!*\
+  !*** ./resources/assets/backgrounds/apex_background_1920x1080.jpg ***!
+  \********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/apex_background_1920x1080.jpg?92ae30b8735b7161e676b6ce8eb49560";
+
+/***/ }),
+
+/***/ "./resources/assets/backgrounds/csgo_background_1920x1080.jpg":
+/*!********************************************************************!*\
+  !*** ./resources/assets/backgrounds/csgo_background_1920x1080.jpg ***!
+  \********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/csgo_background_1920x1080.jpg?82254146ecada51c0dccdec679991ff5";
+
+/***/ }),
+
+/***/ "./resources/assets/backgrounds/hearthstone_background_1920x1080.jpg":
+/*!***************************************************************************!*\
+  !*** ./resources/assets/backgrounds/hearthstone_background_1920x1080.jpg ***!
+  \***************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/hearthstone_background_1920x1080.jpg?9c0a74e9d9e5e90e0c47618b283c25ba";
+
+/***/ }),
+
+/***/ "./resources/assets/backgrounds/pubg_background_1920x1080.jpg":
+/*!********************************************************************!*\
+  !*** ./resources/assets/backgrounds/pubg_background_1920x1080.jpg ***!
+  \********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/pubg_background_1920x1080.jpg?6da5c6a580ceb30cb09be03703364e7c";
+
+/***/ }),
+
+/***/ "./resources/assets/backgrounds/smite_background_1920x1080.jpg":
+/*!*********************************************************************!*\
+  !*** ./resources/assets/backgrounds/smite_background_1920x1080.jpg ***!
+  \*********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/smite_background_1920x1080.jpg?bfb6796a7bc41fac15b7dae24b0aa06b";
+
+/***/ }),
+
 /***/ "./resources/assets/icons/SVGIcons.js":
 /*!********************************************!*\
   !*** ./resources/assets/icons/SVGIcons.js ***!
@@ -79831,6 +79886,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-bootstrap */ "./node_modules/react-bootstrap/es/index.js");
+/* harmony import */ var _assets_backgrounds_pubg_background_1920x1080_jpg__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../assets/backgrounds/pubg_background_1920x1080.jpg */ "./resources/assets/backgrounds/pubg_background_1920x1080.jpg");
+/* harmony import */ var _assets_backgrounds_pubg_background_1920x1080_jpg__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_assets_backgrounds_pubg_background_1920x1080_jpg__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _assets_backgrounds_smite_background_1920x1080_jpg__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../assets/backgrounds/smite_background_1920x1080.jpg */ "./resources/assets/backgrounds/smite_background_1920x1080.jpg");
+/* harmony import */ var _assets_backgrounds_smite_background_1920x1080_jpg__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_assets_backgrounds_smite_background_1920x1080_jpg__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _assets_backgrounds_apex_background_1920x1080_jpg__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../assets/backgrounds/apex_background_1920x1080.jpg */ "./resources/assets/backgrounds/apex_background_1920x1080.jpg");
+/* harmony import */ var _assets_backgrounds_apex_background_1920x1080_jpg__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_assets_backgrounds_apex_background_1920x1080_jpg__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _assets_backgrounds_hearthstone_background_1920x1080_jpg__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../assets/backgrounds/hearthstone_background_1920x1080.jpg */ "./resources/assets/backgrounds/hearthstone_background_1920x1080.jpg");
+/* harmony import */ var _assets_backgrounds_hearthstone_background_1920x1080_jpg__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_assets_backgrounds_hearthstone_background_1920x1080_jpg__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _assets_backgrounds_csgo_background_1920x1080_jpg__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../assets/backgrounds/csgo_background_1920x1080.jpg */ "./resources/assets/backgrounds/csgo_background_1920x1080.jpg");
+/* harmony import */ var _assets_backgrounds_csgo_background_1920x1080_jpg__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_assets_backgrounds_csgo_background_1920x1080_jpg__WEBPACK_IMPORTED_MODULE_6__);
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -79852,6 +79917,11 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 
+
+
+
+
+
 var GamesPage =
 /*#__PURE__*/
 function (_Component) {
@@ -79864,21 +79934,129 @@ function (_Component) {
   }
 
   _createClass(GamesPage, [{
-    key: "getH1Style",
-    value: function getH1Style() {
-      var h1Style = {
-        color: 'white'
-      };
-      return h1Style;
-    }
-  }, {
     key: "render",
     value: function render() {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "page-container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "background-color"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "background-image-games"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "games-cards-container"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Row"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], null))));
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Row"], {
+        className: "game-cards-row"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], {
+        className: "game-cards-col"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "game-card"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        className: "game-card-background",
+        src: _assets_backgrounds_pubg_background_1920x1080_jpg__WEBPACK_IMPORTED_MODULE_2___default.a,
+        alt: "pubg_background"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "game-card-popup"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "game-card-title content-title"
+      }, "Playeruknown's battlegrounds "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        className: "game-card-btn",
+        type: "submit",
+        name: "game-card-btn-find-mate",
+        value: "Find a playmate"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        className: "game-card-btn",
+        type: "submit",
+        name: "game-card-btn-read-more",
+        value: "About content"
+      })))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], {
+        className: "game-cards-col"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "game-card"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        className: "game-card-background",
+        src: _assets_backgrounds_csgo_background_1920x1080_jpg__WEBPACK_IMPORTED_MODULE_6___default.a,
+        alt: "csgo_background"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "game-card-popup"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "game-card-title content-title"
+      }, " Counter-Strike Global Offensive "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        className: "game-card-btn",
+        type: "submit",
+        name: "game-card-btn-find-mate",
+        value: "Find a playmate"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        className: "game-card-btn",
+        type: "submit",
+        name: "game-card-btn-read-more",
+        value: "About content"
+      })))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], {
+        className: "game-cards-col"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "game-card"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        className: "game-card-background",
+        src: _assets_backgrounds_hearthstone_background_1920x1080_jpg__WEBPACK_IMPORTED_MODULE_5___default.a,
+        alt: "hearthstone_background"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "game-card-popup"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "game-card-title content-title"
+      }, " Hearthstone "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        className: "game-card-btn",
+        type: "submit",
+        name: "game-card-btn-find-mate",
+        value: "Find a playmate"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        className: "game-card-btn",
+        type: "submit",
+        name: "game-card-btn-read-more",
+        value: "About content"
+      })))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], {
+        className: "game-cards-col"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "game-card"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        className: "game-card-background",
+        src: _assets_backgrounds_apex_background_1920x1080_jpg__WEBPACK_IMPORTED_MODULE_4___default.a,
+        alt: "apex_background"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "game-card-popup"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "game-card-title content-title"
+      }, " Apex Legends "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        className: "game-card-btn",
+        type: "submit",
+        name: "game-card-btn-find-mate",
+        value: "Find a playmate"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        className: "game-card-btn",
+        type: "submit",
+        name: "game-card-btn-read-more",
+        value: "About content"
+      })))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], {
+        className: "game-cards-col"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "game-card"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        className: "game-card-background",
+        src: _assets_backgrounds_smite_background_1920x1080_jpg__WEBPACK_IMPORTED_MODULE_3___default.a,
+        alt: "smite_background"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "game-card-popup"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "game-card-title content-title"
+      }, " Smite "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        className: "game-card-btn",
+        type: "submit",
+        name: "game-card-btn-find-mate",
+        value: "Find a playmate"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        className: "game-card-btn",
+        type: "submit",
+        name: "game-card-btn-read-more",
+        value: "About content"
+      })))))));
     }
   }]);
 
