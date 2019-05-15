@@ -79593,6 +79593,61 @@ var SVGIcon = function SVGIcon(_ref) {
 
 /***/ }),
 
+/***/ "./resources/assets/logos/apex_logo.png":
+/*!**********************************************!*\
+  !*** ./resources/assets/logos/apex_logo.png ***!
+  \**********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/apex_logo.png?1a4cd3c88d043b5dd94887a4dfab0ea4";
+
+/***/ }),
+
+/***/ "./resources/assets/logos/csgo_logo.png":
+/*!**********************************************!*\
+  !*** ./resources/assets/logos/csgo_logo.png ***!
+  \**********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/csgo_logo.png?281b0c24192dd9c0ecc1b6bd921feb21";
+
+/***/ }),
+
+/***/ "./resources/assets/logos/hearthstone_logo_2.png":
+/*!*******************************************************!*\
+  !*** ./resources/assets/logos/hearthstone_logo_2.png ***!
+  \*******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/hearthstone_logo_2.png?1ee69bddc6542109365ea75ce5f123aa";
+
+/***/ }),
+
+/***/ "./resources/assets/logos/pubg_logo.png":
+/*!**********************************************!*\
+  !*** ./resources/assets/logos/pubg_logo.png ***!
+  \**********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/pubg_logo.png?5afd2f31b53e98a4bd260247eef7a477";
+
+/***/ }),
+
+/***/ "./resources/assets/logos/smite_logo.png":
+/*!***********************************************!*\
+  !*** ./resources/assets/logos/smite_logo.png ***!
+  \***********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/smite_logo.png?bcd0d2630b174cbba77a069f1553e6a3";
+
+/***/ }),
+
 /***/ "./resources/assets/logos/webapp_logo_161x90.png":
 /*!*******************************************************!*\
   !*** ./resources/assets/logos/webapp_logo_161x90.png ***!
@@ -79896,6 +79951,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _assets_backgrounds_hearthstone_background_1920x1080_jpg__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_assets_backgrounds_hearthstone_background_1920x1080_jpg__WEBPACK_IMPORTED_MODULE_5__);
 /* harmony import */ var _assets_backgrounds_csgo_background_1920x1080_jpg__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../assets/backgrounds/csgo_background_1920x1080.jpg */ "./resources/assets/backgrounds/csgo_background_1920x1080.jpg");
 /* harmony import */ var _assets_backgrounds_csgo_background_1920x1080_jpg__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_assets_backgrounds_csgo_background_1920x1080_jpg__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_7__);
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -79906,13 +79963,14 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
 
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
 
 
 
@@ -79927,15 +79985,109 @@ var GamesPage =
 function (_Component) {
   _inherits(GamesPage, _Component);
 
-  function GamesPage() {
+  function GamesPage(props) {
+    var _this;
+
     _classCallCheck(this, GamesPage);
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(GamesPage).apply(this, arguments));
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(GamesPage).call(this, props));
+    _this.state = {
+      showGameStreamers: false,
+      clickedGameName: '',
+      gameStreamers: []
+    };
+    _this.gameContentSelect = _this.gameContentSelect.bind(_assertThisInitialized(_this));
+    _this.fetchContent = _this.fetchContent.bind(_assertThisInitialized(_this));
+    _this.generateStreamersTable = _this.generateStreamersTable.bind(_assertThisInitialized(_this));
+    _this.expandRow = _this.expandRow.bind(_assertThisInitialized(_this));
+    return _this;
   }
 
   _createClass(GamesPage, [{
+    key: "gameContentSelect",
+    value: function gameContentSelect(gameName) {
+      this.setState({
+        clickedGameName: gameName
+      });
+      this.fetchContent(gameName);
+    }
+  }, {
+    key: "fetchContent",
+    value: function fetchContent(gameName) {
+      var _this2 = this;
+
+      var api_url = 'http://megamer.build/api/streamers/';
+      api_url = api_url + gameName;
+      axios__WEBPACK_IMPORTED_MODULE_7___default.a.get(api_url).then(function (response) {
+        return response;
+      }).then(function (json) {
+        if (json.request.statusText === 'OK') {
+          _this2.setState({
+            gameStreamers: json.data.data,
+            showGameStreamers: true
+          });
+        }
+      }).catch(function (error) {
+        alert(error);
+      });
+    }
+  }, {
+    key: "generateStreamersTable",
+    value: function generateStreamersTable() {
+      var usersData = this.state.gameStreamers;
+      var i = 0;
+      var output = [];
+
+      for (i = 0; i < usersData.length; i++) {
+        output.push(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", {
+          id: usersData[i].id
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
+          className: "streamers-table-data"
+        }, " ", usersData[i].streamer_name, " "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
+          className: "streamers-table-data"
+        }, " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+          href: usersData[i].youtube_link,
+          target: "_blank"
+        }, usersData[i].streamer_name, " YouTube"), " "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
+          className: "streamers-table-data"
+        }, " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+          href: usersData[i].twitch_link,
+          target: "_blank"
+        }, usersData[i].streamer_name, " TwitchTV "), " "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
+          className: "streamers-table-data"
+        }, " ", usersData[i].about_streamer, " "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
+          className: "streamers-table-data table-expand-symbol",
+          onClick: this.expandRow
+        }, " + ")));
+        output.push(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("iframe", {
+          className: "hidden-element",
+          src: "https://player.twitch.tv/?channel=shroud&autoplay=false",
+          height: "400",
+          width: "480",
+          allowFullScreen: "true"
+        }, " "));
+      }
+
+      return output;
+    }
+  }, {
+    key: "expandRow",
+    value: function expandRow() {
+      if (jQuery('.table-expand-symbol').hasClass("expanded")) {
+        jQuery('.table-expand-symbol').removeClass("expanded");
+        jQuery('.expandable-element').addClass('hidden-element');
+        jQuery('.hidden-element').removeClass("expandable-element");
+      } else {
+        jQuery('.hidden-element').addClass("expandable-element");
+        jQuery('.table-expand-symbol').addClass('expanded');
+        jQuery('.expandable-element').removeClass('hidden-element');
+      }
+    }
+  }, {
     key: "render",
     value: function render() {
+      var _this3 = this;
+
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "page-container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -79967,7 +80119,10 @@ function (_Component) {
         className: "game-card-btn",
         type: "submit",
         name: "game-card-btn-read-more",
-        value: "About content"
+        value: "Content/Streamers",
+        onClick: function onClick() {
+          return _this3.gameContentSelect('pubg');
+        }
       })))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], {
         className: "game-cards-col"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -79989,7 +80144,10 @@ function (_Component) {
         className: "game-card-btn",
         type: "submit",
         name: "game-card-btn-read-more",
-        value: "About content"
+        value: "Content/Streamers",
+        onClick: function onClick() {
+          return _this3.gameContentSelect('csgo');
+        }
       })))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], {
         className: "game-cards-col"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -80011,7 +80169,10 @@ function (_Component) {
         className: "game-card-btn",
         type: "submit",
         name: "game-card-btn-read-more",
-        value: "About content"
+        value: "Content/Streamers",
+        onClick: function onClick() {
+          return _this3.gameContentSelect('hearthstone');
+        }
       })))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], {
         className: "game-cards-col"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -80033,7 +80194,10 @@ function (_Component) {
         className: "game-card-btn",
         type: "submit",
         name: "game-card-btn-read-more",
-        value: "About content"
+        value: "Content/Streamers",
+        onClick: function onClick() {
+          return _this3.gameContentSelect('apex_legends');
+        }
       })))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], {
         className: "game-cards-col"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -80055,8 +80219,25 @@ function (_Component) {
         className: "game-card-btn",
         type: "submit",
         name: "game-card-btn-read-more",
-        value: "About content"
-      })))))));
+        value: "Content/Streamers",
+        onClick: function onClick() {
+          return _this3.gameContentSelect('smite');
+        }
+      })))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "streamers-table-div"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("table", {
+        className: "streamers-table"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tbody", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", {
+        className: "streamers-table-header table-header"
+      }, "Streamer nickname"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", {
+        className: "streamers-table-header table-header"
+      }, "Streamer YouTube link"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", {
+        className: "streamers-table-header table-header"
+      }, "Streamer TwitchTV link"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", {
+        className: "streamers-table-header table-header"
+      }, "About"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", {
+        className: "streamers-table-header table-header"
+      }, "Expand")), this.state.showGameStreamers ? this.generateStreamersTable() : null))));
     }
   }]);
 
@@ -80353,7 +80534,7 @@ function (_Component) {
         errorMsg: "",
         errorTriggered: false
       });
-      jQuery(".login-button").attr("disabled", "disabled").html('<i class="fa fa-spinner fa-spin fa-1x fa-fw"></i><span class="sr-only">Loading...</span>');
+      jQuery(".login-button").attr("disabled", "disabled").html('<i class="fas fa-spinner fa-pulse fa-1x fa-fw"></i><span class="sr-only">Loading...</span>');
       var uri = "http://megamer.build/api/user/login";
       var loginFormData = new FormData();
       loginFormData.append('emailOrUsername', this.state.emailOrUsername);
@@ -80513,6 +80694,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return NewsPage; });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/es/index.js");
+/* harmony import */ var _assets_logos_pubg_logo_png__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../assets/logos/pubg_logo.png */ "./resources/assets/logos/pubg_logo.png");
+/* harmony import */ var _assets_logos_pubg_logo_png__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_assets_logos_pubg_logo_png__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _assets_logos_csgo_logo_png__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../assets/logos/csgo_logo.png */ "./resources/assets/logos/csgo_logo.png");
+/* harmony import */ var _assets_logos_csgo_logo_png__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_assets_logos_csgo_logo_png__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _assets_logos_smite_logo_png__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../assets/logos/smite_logo.png */ "./resources/assets/logos/smite_logo.png");
+/* harmony import */ var _assets_logos_smite_logo_png__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_assets_logos_smite_logo_png__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _assets_logos_apex_logo_png__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../assets/logos/apex_logo.png */ "./resources/assets/logos/apex_logo.png");
+/* harmony import */ var _assets_logos_apex_logo_png__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_assets_logos_apex_logo_png__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _assets_logos_hearthstone_logo_2_png__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../assets/logos/hearthstone_logo_2.png */ "./resources/assets/logos/hearthstone_logo_2.png");
+/* harmony import */ var _assets_logos_hearthstone_logo_2_png__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_assets_logos_hearthstone_logo_2_png__WEBPACK_IMPORTED_MODULE_6__);
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -80530,6 +80722,12 @@ function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.g
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+
+
+
+
+
 
 
 
@@ -80557,11 +80755,36 @@ function (_Component) {
     value: function render() {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "page-container"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
-        style: {
-          color: 'black'
-        }
-      }, "News page "));
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "background-color"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "background-image-news"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "games-choice-top-bar"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        src: _assets_logos_pubg_logo_png__WEBPACK_IMPORTED_MODULE_2___default.a,
+        alt: "pubg_logo"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        src: _assets_logos_csgo_logo_png__WEBPACK_IMPORTED_MODULE_3___default.a,
+        alt: "pubg_logo"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        src: _assets_logos_smite_logo_png__WEBPACK_IMPORTED_MODULE_4___default.a,
+        alt: "pubg_logo"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        src: _assets_logos_apex_logo_png__WEBPACK_IMPORTED_MODULE_5___default.a,
+        alt: "pubg_logo"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        src: _assets_logos_hearthstone_logo_2_png__WEBPACK_IMPORTED_MODULE_6___default.a,
+        alt: "pubg_logo"
+      })))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "news-choice-side-bar"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+        className: "news-ul"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: "#"
+      }, " Patches ")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: "#"
+      }, " Events ")))));
     }
   }]);
 
@@ -80746,7 +80969,11 @@ function (_Component) {
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
         exact: true,
         path: "/signup",
-        component: _signupComponent__WEBPACK_IMPORTED_MODULE_12__["default"]
+        render: function render(props) {
+          return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_signupComponent__WEBPACK_IMPORTED_MODULE_12__["default"], _extends({}, props, {
+            login: _this2.login
+          }));
+        }
       })));
     }
   }]);
@@ -81028,7 +81255,10 @@ function (_Component) {
   }, {
     key: "_registerUser",
     value: function _registerUser(e) {
+      var _this3 = this;
+
       e.preventDefault();
+      jQuery(".signup-btn").attr("disabled", "disabled").html('<i class="fas fa-spinner fa-pulse fa-1x fa-fw"></i><span class="sr-only">Loading...</span>');
       var uri = "http://megamer.build/api/user/register";
       var email = this.state.email;
       var username = this.state.username;
@@ -81054,14 +81284,24 @@ function (_Component) {
             };
             var appState = {
               isLoggedIn: true,
-              userData: user
+              user: user
             };
             localStorage["appState"] = JSON.stringify(appState);
+
+            _this3.props.login();
+
+            _this3.props.history.push('/');
             /*this.setState({
                 isLoggedIn: appState.isLoggedIn,
                 user: appState.user
             })*/
+
+          } else {
+            jQuery(".singup-btn").removeAttr("disabled").html("Login");
           }
+        }).catch(function (error) {
+          alert("An Error Occured! ".concat(error));
+          jQuery(".singup-btn").removeAttr("disabled").html("Sign up");
         });
       } else {
         this.state.errorMsg = validationResponse;
@@ -81070,7 +81310,7 @@ function (_Component) {
   }, {
     key: "render",
     value: function render() {
-      var _this3 = this;
+      var _this4 = this;
 
       var ErrorBox = function ErrorBox() {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -81078,7 +81318,7 @@ function (_Component) {
           className: "error-box"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
           className: "error-msg"
-        }, " ", _this3.state.errorMsg, " "));
+        }, " ", _this4.state.errorMsg, " "));
       };
 
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -81159,11 +81399,11 @@ function (_Component) {
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         onClick: this.changeVisibility
       }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Button"], {
-        className: "submit-button",
+        className: "submit-button signup-btn",
         name: "submit-button",
         type: "submit",
         onClick: this._registerUser
-      }, "register")))));
+      }, "sign up")))));
     }
   }]);
 

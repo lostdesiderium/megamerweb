@@ -84,7 +84,7 @@ export default class Root extends Component {
                     <Route exact path="/fp" component={FpPage}/>
                     <Route exact path="/help" component={HelpPage}/>
                     <Route exact path="/login" render={ (props) => <LoginPage {...props} login={this.login} /> }/>
-                    <Route exact path="/signup" component={SignupPage}/>
+                    <Route exact path="/signup" render={ (props) => <SignupPage {...props} login={this.login} /> }/>
                 </div>
             </Router>
         );

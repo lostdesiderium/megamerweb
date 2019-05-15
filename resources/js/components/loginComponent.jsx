@@ -58,7 +58,7 @@ export default class LoginPage extends Component{
             jQuery(".login-button")
                 .attr("disabled", "disabled")
                 .html(
-                    '<i class="fa fa-spinner fa-spin fa-1x fa-fw"></i><span class="sr-only">Loading...</span>'
+                    '<i class="fas fa-spinner fa-pulse fa-1x fa-fw"></i><span class="sr-only">Loading...</span>'
                 );
 
             let uri = "http://megamer.build/api/user/login";

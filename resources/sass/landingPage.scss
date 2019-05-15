@@ -33,24 +33,6 @@
         //display: none;
     }
 
-    .ilgasTekstas{
-        color:white;
-        //z-index: -15;
-    }
-    .btnPressMe{
-        z-index: 25;
-        
-        &:hover{
-            color: blue;
-        }
-    }
-
-    .aaaa{
-        &:hover{
-            color: white;
-        }
-    }
-
     .landing-page-row{
         width: 100%;
         margin: 0;
@@ -146,9 +128,9 @@
                         text-decoration: none;
                     }
                 }
-                
+
             }
         }
     }
-    
+
 }

@@ -52,5 +52,6 @@ Route::group(['users/middleware' => 'api-header'], function () {
     // Therefore the jwtMiddleware will be exclusive of them
     Route::post('user/login', 'UserController@login');
     Route::post('user/register', 'UserController@register');
+    Route::get('streamers/{game_name}', 'StreamersController@index');
 });
 //----------- USERS APIs END ---------------

@@ -46,6 +46,17 @@ ul, ol, dl {
     padding: 0
 }
 
+img {
+
+    /* For Opera and <= IE9, we need to add unselectable="on" attribute onto each element */
+    /* Check this site for more details: http://help.dottoro.com/lhwdpnva.php */
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+
 .error-box{
     width: calc(100% - 64px);
     color: orangered;
@@ -79,3 +90,4 @@ ul, ol, dl {
 @import 'loginComponent';
 @import 'signupComponent';
 @import 'gamesComponent';
+@import 'newsComponent';

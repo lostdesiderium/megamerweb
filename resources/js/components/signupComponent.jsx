@@ -124,6 +124,12 @@ export default class SingupPage extends Component{
     _registerUser(e){
         e.preventDefault();
 
+        jQuery(".signup-btn")
+                .attr("disabled", "disabled")
+                .html(
+                    '<i class="fas fa-spinner fa-pulse fa-1x fa-fw"></i><span class="sr-only">Loading...</span>'
+                );
+
         let uri = "http://megamer.build/api/user/register";
 
         var email = this.state.email;
@@ -156,15 +162,27 @@ export default class SingupPage extends Component{
 
                     let appState = {
                         isLoggedIn: true,
-                        userData: user,
+                        user: user,
                     }
 
                     localStorage["appState"] = JSON.stringify(appState);
+                    this.props.login();
+                    this.props.history.push('/');
                     /*this.setState({
                         isLoggedIn: appState.isLoggedIn,
                         user: appState.user
                     })*/
                 }
+                else{
+                    jQuery(".singup-btn")
+                    .removeAttr("disabled")
+                    .html("Login");
+                }
+            }).catch(error => {
+                alert(`An Error Occured! ${error}`);
+                jQuery(".singup-btn")
+                .removeAttr("disabled")
+                .html("Sign up");
             });
         }
         else{
@@ -211,7 +229,7 @@ export default class SingupPage extends Component{
                             </div>
 
 
-                            <Button className="submit-button" name="submit-button" type="submit" onClick={this._registerUser}>register</Button>
+                            <Button className="submit-button signup-btn" name="submit-button" type="submit" onClick={this._registerUser}>sign up</Button>
                         </div>
                     </Col>
                 </Row>
