@@ -17,6 +17,7 @@ class Streamers extends Model
         'youtube_link',
         'twitch_link',
         'about_streamer',
+        'twitch_player_url',
     ];
 
     /**

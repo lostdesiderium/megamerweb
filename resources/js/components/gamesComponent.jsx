@@ -12,10 +12,11 @@ export default class GamesPage extends Component{
 
     constructor(props){
         super(props);
+        this.myRef=null;
         this.state = {
             showGameStreamers: false,
             clickedGameName: '',
-            gameStreamers: []
+            gameStreamers: [],
         }
 
         this.gameContentSelect = this.gameContentSelect.bind(this);
@@ -55,29 +56,37 @@ export default class GamesPage extends Component{
         var i = 0;
         var output = [];
         for( i = 0; i < usersData.length; i++){
+            var expandClass = "streamer-table-data table-expand-symbol table-expand-symbol-" + usersData[i].streamer_name;
+            var hiddenElementClass = "hidden-element hideable-element-" + usersData[i].streamer_name;
+            var streamerName = usersData[i].streamer_name;
+            var twitchPlayerURL = usersData[i].twitch_player_url + "&autoplay=false";
             output.push(<tr id={usersData[i].id}>
-                <td className="streamers-table-data"> {usersData[i].streamer_name} </td>
-                <td className="streamers-table-data"> <a href={usersData[i].youtube_link} target="_blank">{usersData[i].streamer_name} YouTube</a> </td>
-                <td className="streamers-table-data"> <a href={usersData[i].twitch_link} target="_blank">{usersData[i].streamer_name} TwitchTV </a> </td>
-                <td className="streamers-table-data"> {usersData[i].about_streamer} </td>
-                <td className="streamers-table-data table-expand-symbol" onClick={this.expandRow}> + </td>
+                <td key={usersData[i].streamer_name} className="streamers-table-data"> {usersData[i].streamer_name} </td>
+                <td key={usersData[i].youtube_link} className="streamers-table-data"> <a href={usersData[i].youtube_link} target="_blank">{usersData[i].streamer_name} YouTube</a> </td>
+                <td key={usersData[i].twitch_link} className="streamers-table-data"> <a href={usersData[i].twitch_link} target="_blank">{usersData[i].streamer_name} TwitchTV </a> </td>
+                <td key={usersData[i].about_streamer} className="streamers-table-data"> {usersData[i].about_streamer} </td>
+                <td key={usersData[i].id} className={expandClass}> <input type="button" name={usersData[i].streamer_name} value="+" onClick={this.expandRow}/> </td>
             </tr>);
-            output.push(<iframe className="hidden-element" src="https://player.twitch.tv/?channel=shroud&autoplay=false" height="400" width="480" allowFullScreen="true"> </iframe>);
-
+            output.push(<tr><td colSpan={5} style={{align: "center"}}><iframe id={streamerName} className={hiddenElementClass} src={twitchPlayerURL} height="400" width="480" allowFullScreen={true}> </iframe></td></tr>);
         }
+        this.scrollToMyRef();
         return output;
     }
 
-    expandRow(){
-        if(jQuery('.table-expand-symbol').hasClass("expanded")){
-            jQuery('.table-expand-symbol').removeClass("expanded");
-            jQuery('.expandable-element').addClass('hidden-element');
-            jQuery('.hidden-element').removeClass("expandable-element");
+    scrollToMyRef(){
+        window.scrollTo(0, this.myRef.offsetTop);
+    }
+
+    expandRow(e){
+        var streamer_name = e.currentTarget.name;
+        var className = ".hideable-element-" + streamer_name;
+        if(jQuery(className).hasClass("expandable-element")){
+            jQuery(className).removeClass("expandable-element");
+            jQuery(className).addClass("hidden-element");
         }
         else{
-            jQuery('.hidden-element').addClass("expandable-element");
-            jQuery('.table-expand-symbol').addClass('expanded')
-            jQuery('.expandable-element').removeClass('hidden-element');
+            jQuery(className).removeClass("hidden-element");
+            jQuery(className).addClass("expandable-element");
         }
 
     }
@@ -145,14 +154,21 @@ export default class GamesPage extends Component{
                     </Row>
                 </div>
 
-                <div className="streamers-table-div"><table className="streamers-table"><tbody><tr>
+                <div ref={ (ref) => this.myRef=ref } className="streamers-table-div"><table className="streamers-table"><tbody><tr>
                                 <th className="streamers-table-header table-header">Streamer nickname</th>
                                 <th className="streamers-table-header table-header">Streamer YouTube link</th>
                                 <th className="streamers-table-header table-header">Streamer TwitchTV link</th>
                                 <th className="streamers-table-header table-header">About</th>
                                 <th className="streamers-table-header table-header">Expand</th>
                             </tr>
-                            { this.state.showGameStreamers ? this.generateStreamersTable() : null }
+                            { this.state.showGameStreamers ? this.generateStreamersTable() :<tr>
+                                                                                                <td className="streamers-table-data">Select</td>
+                                                                                                <td className="streamers-table-data">game</td>
+                                                                                                <td className="streamers-table-data">to</td>
+                                                                                                <td className="streamers-table-data">see</td>
+                                                                                                <td className="streamers-table-data">content</td>
+                                                                                            </tr>
+                            }
                         </tbody>
                     </table>
                 </div>

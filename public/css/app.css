@@ -2,6 +2,7 @@
 
 html {
   position: relative;
+  scroll-behavior: smooth;
   min-height: 100%;
   min-width: 100%;
 }
@@ -11288,6 +11289,8 @@ a.text-dark:focus {
   max-height: 250px;
   max-width: 444px;
   position: relative;
+  box-shadow: 2px 2px 10px black;
+  overflow: hidden;
 }
 
 .game-card-background {
@@ -11343,6 +11346,8 @@ a.text-dark:focus {
 
 .game-card:hover .game-card-background {
   opacity: 0.5;
+  -webkit-transform: scale(1.15, 1.15);
+          transform: scale(1.15, 1.15);
 }
 
 .game-card:hover .game-card-popup {
@@ -11380,9 +11385,21 @@ a.text-dark:focus {
   word-break: break-word;
 }
 
+.streamers-table-data a {
+  color: #00DC8A;
+  font-style: italic;
+}
+
+.streamers-table-data a:hover {
+  color: #00DC8A;
+  opacity: 0.3;
+}
+
 iframe {
   z-index: 5;
   position: relative;
+  margin: 16px 0;
+  border: none;
 }
 
 .hidden-element {
@@ -11400,10 +11417,21 @@ iframe {
 }
 
 .table-expand-symbol {
+  text-align: center;
+}
+
+.table-expand-symbol input {
   font-size: 24px;
   cursor: pointer;
   font-weight: bold;
   color: #00DC8A;
+  text-align: center;
+  background-color: transparent;
+  border: none;
+}
+
+.table-expand-symbol input:hover {
+  opacity: 0.3;
 }
 
 .background-image-news {

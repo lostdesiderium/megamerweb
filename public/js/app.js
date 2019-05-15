@@ -79991,6 +79991,7 @@ function (_Component) {
     _classCallCheck(this, GamesPage);
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(GamesPage).call(this, props));
+    _this.myRef = null;
     _this.state = {
       showGameStreamers: false,
       clickedGameName: '',
@@ -80039,48 +80040,74 @@ function (_Component) {
       var output = [];
 
       for (i = 0; i < usersData.length; i++) {
+        var expandClass = "streamer-table-data table-expand-symbol table-expand-symbol-" + usersData[i].streamer_name;
+        var hiddenElementClass = "hidden-element hideable-element-" + usersData[i].streamer_name;
+        var streamerName = usersData[i].streamer_name;
+        var twitchPlayerURL = usersData[i].twitch_player_url + "&autoplay=false";
         output.push(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", {
           id: usersData[i].id
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
+          key: usersData[i].streamer_name,
           className: "streamers-table-data"
         }, " ", usersData[i].streamer_name, " "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
+          key: usersData[i].youtube_link,
           className: "streamers-table-data"
         }, " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
           href: usersData[i].youtube_link,
           target: "_blank"
         }, usersData[i].streamer_name, " YouTube"), " "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
+          key: usersData[i].twitch_link,
           className: "streamers-table-data"
         }, " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
           href: usersData[i].twitch_link,
           target: "_blank"
         }, usersData[i].streamer_name, " TwitchTV "), " "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
+          key: usersData[i].about_streamer,
           className: "streamers-table-data"
         }, " ", usersData[i].about_streamer, " "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
-          className: "streamers-table-data table-expand-symbol",
+          key: usersData[i].id,
+          className: expandClass
+        }, " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+          type: "button",
+          name: usersData[i].streamer_name,
+          value: "+",
           onClick: this.expandRow
-        }, " + ")));
-        output.push(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("iframe", {
-          className: "hidden-element",
-          src: "https://player.twitch.tv/?channel=shroud&autoplay=false",
+        }), " ")));
+        output.push(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
+          colSpan: 5,
+          style: {
+            align: "center"
+          }
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("iframe", {
+          id: streamerName,
+          className: hiddenElementClass,
+          src: twitchPlayerURL,
           height: "400",
           width: "480",
-          allowFullScreen: "true"
-        }, " "));
+          allowFullScreen: true
+        }, " "))));
       }
 
+      this.scrollToMyRef();
       return output;
     }
   }, {
+    key: "scrollToMyRef",
+    value: function scrollToMyRef() {
+      window.scrollTo(0, this.myRef.offsetTop);
+    }
+  }, {
     key: "expandRow",
-    value: function expandRow() {
-      if (jQuery('.table-expand-symbol').hasClass("expanded")) {
-        jQuery('.table-expand-symbol').removeClass("expanded");
-        jQuery('.expandable-element').addClass('hidden-element');
-        jQuery('.hidden-element').removeClass("expandable-element");
+    value: function expandRow(e) {
+      var streamer_name = e.currentTarget.name;
+      var className = ".hideable-element-" + streamer_name;
+
+      if (jQuery(className).hasClass("expandable-element")) {
+        jQuery(className).removeClass("expandable-element");
+        jQuery(className).addClass("hidden-element");
       } else {
-        jQuery('.hidden-element').addClass("expandable-element");
-        jQuery('.table-expand-symbol').addClass('expanded');
-        jQuery('.expandable-element').removeClass('hidden-element');
+        jQuery(className).removeClass("hidden-element");
+        jQuery(className).addClass("expandable-element");
       }
     }
   }, {
@@ -80224,6 +80251,9 @@ function (_Component) {
           return _this3.gameContentSelect('smite');
         }
       })))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        ref: function ref(_ref) {
+          return _this3.myRef = _ref;
+        },
         className: "streamers-table-div"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("table", {
         className: "streamers-table"
@@ -80237,7 +80267,17 @@ function (_Component) {
         className: "streamers-table-header table-header"
       }, "About"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", {
         className: "streamers-table-header table-header"
-      }, "Expand")), this.state.showGameStreamers ? this.generateStreamersTable() : null))));
+      }, "Expand")), this.state.showGameStreamers ? this.generateStreamersTable() : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
+        className: "streamers-table-data"
+      }, "Select"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
+        className: "streamers-table-data"
+      }, "game"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
+        className: "streamers-table-data"
+      }, "to"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
+        className: "streamers-table-data"
+      }, "see"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
+        className: "streamers-table-data"
+      }, "content"))))));
     }
   }]);
 
