@@ -61,6 +61,10 @@ img {
   white-space: pre-line;
 }
 
+.active {
+  color: white !important;
+}
+
 /*!
  * Bootstrap v4.3.1 (https://getbootstrap.com/)
  * Copyright 2011-2019 The Bootstrap Authors
@@ -10892,26 +10896,22 @@ a.text-dark:focus {
   margin: 0;
 }
 
-.top-navbar-container .account-widget .account-options-dropdown .dropdown-ul li {
+.top-navbar-container .account-widget .account-options-dropdown .dropdown-ul a {
+  color: grey;
+}
+
+.top-navbar-container .account-widget .account-options-dropdown .dropdown-ul a:hover {
+  text-decoration: none;
+}
+
+.top-navbar-container .account-widget .account-options-dropdown .dropdown-ul a li {
   padding: 4px 8px;
 }
 
-.top-navbar-container .account-widget .account-options-dropdown .dropdown-ul li:hover {
+.top-navbar-container .account-widget .account-options-dropdown .dropdown-ul a li:hover {
   border-left: 2px solid #00DC8A;
   background-color: rgba(255, 255, 255, 0.1);
-}
-
-.top-navbar-container .account-widget .account-options-dropdown .dropdown-ul li a {
-  color: #A0B4AC;
-}
-
-.top-navbar-container .account-widget .account-options-dropdown .dropdown-ul li a:hover {
-  text-decoration: none;
   color: white;
-}
-
-.top-navbar-container .account-widget .account-options-dropdown .dropdown-ul li a:visited {
-  text-decoration: none;
 }
 
 .page-container {
@@ -11479,12 +11479,13 @@ iframe {
 
 .news-choice-side-bar {
   z-index: 1;
-  min-height: 300px;
-  min-width: 200px;
+  height: 300px;
+  width: 200px;
   position: fixed;
   right: 0;
   margin-right: 32px;
   background: #292121;
+  font-family: "Ubuntu", sans-serif;
 }
 
 .news-choice-side-bar .news-ul {
@@ -11495,11 +11496,16 @@ iframe {
 
 .news-choice-side-bar .news-ul li {
   cursor: pointer;
+  text-align: center;
 }
 
 .news-choice-side-bar .news-ul li:hover {
   border-left: 2px solid #00DC8A;
   background-color: rgba(255, 255, 255, 0.1);
+}
+
+.news-choice-side-bar .news-ul li:hover a {
+  color: white;
 }
 
 .news-choice-side-bar .news-ul li a {
@@ -11512,5 +11518,265 @@ iframe {
 
 .news-choice-side-bar .news-ul li a:hover {
   color: white;
+}
+
+.games-choice-top-bar ul li:hover {
+  background-color: #292121;
+}
+
+.active-game {
+  background-color: #292121;
+}
+
+.active-content {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.active-content a {
+  color: white !important;
+}
+
+.appended-data {
+  position: relative;
+}
+
+.patch-card,
+.news-card {
+  color: lightgray;
+  font-family: "Ubuntu", sans-serif;
+  position: relative;
+  width: 70%;
+  margin-left: 10%;
+  height: 250px;
+  background-color: rgba(41, 33, 33, 0.7);
+  border-radius: 8px;
+  transition: 0.25s;
+}
+
+.patch-card:hover,
+.news-card:hover {
+  background-color: #292121;
+}
+
+.patch-card .patch-card-left-square,
+.patch-card .news-card-left-square,
+.news-card .patch-card-left-square,
+.news-card .news-card-left-square {
+  width: 30%;
+  height: 100%;
+  padding: 16px;
+  float: left;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  align-content: space-between;
+  align-items: flex-start;
+}
+
+.patch-card .patch-card-left-square .patch-name,
+.patch-card .patch-card-left-square .news-name,
+.patch-card .news-card-left-square .patch-name,
+.patch-card .news-card-left-square .news-name,
+.news-card .patch-card-left-square .patch-name,
+.news-card .patch-card-left-square .news-name,
+.news-card .news-card-left-square .patch-name,
+.news-card .news-card-left-square .news-name {
+  font-size: 24px;
+}
+
+.patch-card .patch-card-left-square .patch-publish-date,
+.patch-card .patch-card-left-square .news-publish-date,
+.patch-card .news-card-left-square .patch-publish-date,
+.patch-card .news-card-left-square .news-publish-date,
+.news-card .patch-card-left-square .patch-publish-date,
+.news-card .patch-card-left-square .news-publish-date,
+.news-card .news-card-left-square .patch-publish-date,
+.news-card .news-card-left-square .news-publish-date {
+  font-size: 14px;
+  font-style: italic;
+}
+
+.patch-card .patch-card-left-square .patch-release-date,
+.patch-card .patch-card-left-square .news-release-date,
+.patch-card .news-card-left-square .patch-release-date,
+.patch-card .news-card-left-square .news-release-date,
+.news-card .patch-card-left-square .patch-release-date,
+.news-card .patch-card-left-square .news-release-date,
+.news-card .news-card-left-square .patch-release-date,
+.news-card .news-card-left-square .news-release-date {
+  font-size: 14px;
+  font-style: italic;
+}
+
+.patch-card .patch-content,
+.patch-card .news-content,
+.news-card .patch-content,
+.news-card .news-content {
+  margin: 16px 32px;
+  height: 80%;
+  overflow-y: scroll;
+  box-sizing: content-box;
+  overflow: -moz-scrollbars-none;
+  -ms-overflow-style: none;
+}
+
+.patch-card .patch-content::-webkit-scrollbar,
+.news-card .patch-content::-webkit-scrollbar {
+  display: none;
+}
+
+.patch-card .news-content::-webkit-scrollbar,
+.news-card .news-content::-webkit-scrollbar {
+  display: none;
+}
+
+.patch-card .patch-resource-link,
+.patch-card .news-resource-link,
+.news-card .patch-resource-link,
+.news-card .news-resource-link {
+  height: auto;
+  font-size: 14px;
+  font-style: italic;
+}
+
+@-webkit-keyframes fieldsDropdown {
+  from {
+    height: 0;
+  }
+
+  to {
+    height: auto;
+  }
+}
+
+@keyframes fieldsDropdown {
+  from {
+    height: 0;
+  }
+
+  to {
+    height: auto;
+  }
+}
+
+.profile-div {
+  width: 80%;
+  height: auto;
+  color: lightgrey;
+  font-family: "Ubuntu", sans-serif;
+  position: relative;
+  border: 1px solid #292121;
+  border-radius: 8px;
+  background-color: rgba(41, 33, 33, 0.5);
+  margin: 5% 0 0 10%;
+  padding: 1rem 2rem;
+}
+
+.profile-div .profile-page-title {
+  width: 100%;
+  height: auto;
+  padding: 16px 32px;
+  text-align: center;
+  font-size: 36px;
+  font-family: "Dosis", sans-serif;
+  font-variant: small-caps;
+}
+
+.profile-div .profile-general-info .user-field label {
+  padding: 0.5rem;
+  min-width: 30%;
+}
+
+.profile-div .profile-general-info .user-field input {
+  padding: 0.5rem;
+  min-width: 50%;
+  background-color: #292121;
+  opacity: 0.5;
+  color: white;
+  border-radius: 4px;
+}
+
+.profile-div .profile-general-info .user-field input:focus {
+  border-color: #292121;
+}
+
+.profile-div .info-area {
+  padding: 1rem 0;
+}
+
+.profile-div .info-area .profile-game-info-header {
+  cursor: pointer;
+  border-radius: 4px;
+  padding: 4px 0;
+}
+
+.profile-div .info-area .profile-game-info-header input {
+  width: 100%;
+  background: none;
+  border: none;
+  position: absolute;
+}
+
+.profile-div .info-area .profile-game-info-header input:focus {
+  outline: none;
+}
+
+.profile-div .info-area .profile-game-info-header:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.profile-div .info-area .profile-game-info-header .game-info-header-title {
+  padding: 0.5rem;
+}
+
+.profile-div .info-area .profile-game-info-header .game-info-header-arrow-default {
+  margin-left: 2rem;
+}
+
+.profile-div .info-area .profile-game-info-fields {
+  height: 0;
+  transition: 0.25s ease-in-out;
+  overflow: hidden;
+}
+
+.profile-div .info-area .profile-game-info-fields .user-field {
+  padding: 0.5rem;
+}
+
+.profile-div .info-area .profile-game-info-fields .user-field label {
+  min-width: 30%;
+  margin-left: 1rem;
+}
+
+.profile-div .info-area .profile-game-info-fields .user-field input,
+.profile-div .info-area .profile-game-info-fields .user-field select {
+  padding: 0.5rem;
+  min-width: 50%;
+  background-color: #292121;
+  opacity: 0.5;
+  color: white;
+  border-radius: 4px;
+}
+
+.profile-div .info-area .profile-game-info-fields .user-field input:active,
+.profile-div .info-area .profile-game-info-fields .user-field select:active {
+  border-color: #292121;
+}
+
+.profile-div .info-area .profile-game-info-fields .user-field input:focus,
+.profile-div .info-area .profile-game-info-fields .user-field select:focus {
+  outline: white;
+}
+
+.profile-div .info-area .profile-game-info-fields .help-info {
+  margin-top: 16px;
+  padding: 0 16px;
+  font-style: italic;
+  font-size: 12px;
+}
+
+.profile-div .info-area .profile-game-info-fields .help-info a {
+  color: #00DC8A;
 }
 

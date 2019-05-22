@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateStreamersNewsTable extends Migration
+class CreateGamesNewsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,14 @@ class CreateStreamersNewsTable extends Migration
      */
     public function up()
     {
-        Schema::create('streamers_news', function (Blueprint $table) {
+        Schema::create('games_news', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('belongs_to_streamer');
             $table->string('game_name');
-            $table->string('news_content');
+            $table->string('news_name')->nullable();
+            $table->mediumText('news_content');
             $table->string('resources_link')->nullable();
+            $table->dateTime('pusblished_date')->nullable();
+            $table->string('event_start')->nullable();
             $table->timestamps();
         });
     }
@@ -30,6 +32,6 @@ class CreateStreamersNewsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('streamers_news');
+        Schema::dropIfExists('games_news');
     }
 }

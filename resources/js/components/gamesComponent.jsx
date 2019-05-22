@@ -159,7 +159,7 @@ export default class GamesPage extends Component{
                                 <th className="streamers-table-header table-header">Streamer YouTube link</th>
                                 <th className="streamers-table-header table-header">Streamer TwitchTV link</th>
                                 <th className="streamers-table-header table-header">About</th>
-                                <th className="streamers-table-header table-header">Expand</th>
+                                <th className="streamers-table-header table-header">More</th>
                             </tr>
                             { this.state.showGameStreamers ? this.generateStreamersTable() :<tr>
                                                                                                 <td className="streamers-table-data">Select</td>

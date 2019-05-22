@@ -139,27 +139,26 @@
                 list-style-type: none;
                 margin: 0;
 
-                li{
-                    padding: 4px 8px;
+
+                a{
+                    color: grey;
 
                     &:hover{
-                        border-left: 2px solid $accent_color;
-                        background-color: rgba(255,255,255,0.1);
+                        text-decoration: none;
                     }
 
-                    a{
-                        color: $text_color;
+                    li{
+                        padding: 4px 8px;
 
                         &:hover{
-                            text-decoration: none;
+                            border-left: 2px solid $accent_color;
+                            background-color: rgba(255,255,255,0.1);
                             color: white;
-                        }
 
-                        &:visited{
-                            text-decoration: none;
                         }
                     }
                 }
+
             }
 
 

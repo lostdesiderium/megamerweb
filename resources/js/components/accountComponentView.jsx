@@ -35,20 +35,18 @@ export default class AccountComponentView extends Component {
 
     logout(){
         this.props.topNavBarNeedsUpdate();
-        this.props.history.push('/login');
     }
 
     render(){
         return(
                 <div className="account-widget">
-                    <div className="username-line"> {this.props.user.username} , </div>
+                    <div className="username-line"> {this.props.user.username} </div>
                     <div className="account-rounded-pic" onClick={this.openDrawer}><SVGIcon name="ic-user-circle" fill="#fff" width={40} />
                         <div className="account-options-dropdown" >
                             <ul className="dropdown-ul">
-                                <li><NavLink exact to="/user-profile"> My profile </NavLink></li>
-                                <li><NavLink exact to="/user-acc"> My account </NavLink></li>
-                                <li><NavLink exact to="/user-settings"> Settings </NavLink></li>
-                                <li onClick={this.logout}> Log out </li>
+                                <NavLink exact to="/user-profile"><li> My profile </li></NavLink>
+                                <NavLink exact to="/user-account"><li> Account settings </li></NavLink>
+                                <NavLink exact to="/home"><li onClick={this.logout}> Log out </li></NavLink>
                             </ul>
                         </div>
                     </div>

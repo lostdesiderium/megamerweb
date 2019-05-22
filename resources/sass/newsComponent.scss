@@ -57,12 +57,13 @@
 
 .news-choice-side-bar{
     z-index: 1;
-    min-height: 300px;
-    min-width: 200px;
+    height: 300px;
+    width: 200px;
     position: fixed;
     right: 0;
     margin-right: 32px;
     background: $background_color_dark_rgba;
+    font-family: $font_family_content;
 
     .news-ul{
         display: block;
@@ -71,10 +72,15 @@
 
         li{
             cursor: pointer;
+            text-align: center;
 
             &:hover{
                 border-left: 2px solid $accent_color;
                 background-color: rgba(255,255,255,0.1);
+
+                a{
+                    color: white;
+                }
             }
 
             a{
@@ -91,5 +97,115 @@
                 }
             }
         }
+    }
+}
+
+.games-choice-top-bar{
+
+    ul{
+
+        li{
+
+            &:hover{
+                background-color: $background_color_dark_rgba;
+            }
+        }
+    }
+}
+
+.active-game{
+    background-color: $background_color_dark_rgba;
+}
+
+.active-content {
+    background-color: rgba(255,255,255,0.1);
+
+    a{
+        color: white !important;
+    }
+}
+
+.appended-data{
+    position: relative;
+}
+
+.patch-card, .news-card{
+    color: lightgray;
+    font-family: $font_family_content;
+    position: relative;
+    width: 70%;
+    margin-left: 10%;
+    height: 250px;
+    background-color: rgba(41,33,33, 0.7);
+    border-radius: 8px;
+    transition: 0.25s;
+
+    &:hover{
+        background-color: $background_color_dark_rgba;
+    }
+
+    .patch-card-left-square, .news-card-left-square{
+        width: 30%;
+        height: 100%;
+        padding: 16px;
+        float:left; // to make space to right div
+
+        // FLEXY BOX
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        -webkit-flex-wrap: nowrap;
+        -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+        -webkit-justify-content: space-around;
+        -ms-flex-pack: distribute;
+        justify-content: space-around;
+        -webkit-align-content: space-between;
+        -ms-flex-line-pack: justify;
+        align-content: space-between;
+        -webkit-align-items: flex-start;
+        -ms-flex-align: start;
+        align-items: flex-start;
+
+        .patch-name, .news-name{
+            font-size: $font_normal_title;
+        }
+
+        .patch-publish-date, .news-publish-date{
+            font-size: $font_small_text;
+            font-style: italic;
+        }
+
+        .patch-release-date, .news-release-date{
+            font-size: $font_small_text;
+            font-style: italic;
+        }
+    }
+
+    .patch-content, .news-content{
+        margin: 16px 32px;
+        height: 80%;
+        overflow-y: scroll;
+        box-sizing: content-box;
+
+        overflow: -moz-scrollbars-none;
+        -ms-overflow-style: none;
+    }
+
+    .patch-content::-webkit-scrollbar{
+        display: none;
+    }
+
+    .news-content::-webkit-scrollbar{
+        display: none;
+    }
+
+    .patch-resource-link, .news-resource-link{
+        height: auto;
+        font-size: $font_small_text;
+        font-style: italic;
     }
 }

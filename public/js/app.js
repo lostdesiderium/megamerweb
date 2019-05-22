@@ -79815,7 +79815,6 @@ function (_Component) {
     key: "logout",
     value: function logout() {
       this.props.topNavBarNeedsUpdate();
-      this.props.history.push('/login');
     }
   }, {
     key: "render",
@@ -79824,7 +79823,7 @@ function (_Component) {
         className: "account-widget"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "username-line"
-      }, " ", this.props.user.username, " , "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, " ", this.props.user.username, " "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "account-rounded-pic",
         onClick: this.openDrawer
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_assets_icons_SVGIcons__WEBPACK_IMPORTED_MODULE_2__["default"], {
@@ -79835,22 +79834,583 @@ function (_Component) {
         className: "account-options-dropdown"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
         className: "dropdown-ul"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["NavLink"], {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["NavLink"], {
         exact: true,
         to: "/user-profile"
-      }, " My profile ")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["NavLink"], {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, " My profile ")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["NavLink"], {
         exact: true,
-        to: "/user-acc"
-      }, " My account ")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["NavLink"], {
+        to: "/user-account"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, " Account settings ")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["NavLink"], {
         exact: true,
-        to: "/user-settings"
-      }, " Settings ")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+        to: "/home"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
         onClick: this.logout
-      }, " Log out ")))));
+      }, " Log out "))))));
     }
   }]);
 
   return AccountComponentView;
+}(react__WEBPACK_IMPORTED_MODULE_0__["Component"]);
+
+
+
+/***/ }),
+
+/***/ "./resources/js/components/accountComponents/accountComponent.jsx":
+/*!************************************************************************!*\
+  !*** ./resources/js/components/accountComponents/accountComponent.jsx ***!
+  \************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return ProfileComponent; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+
+
+var ProfileComponent =
+/*#__PURE__*/
+function (_Component) {
+  _inherits(ProfileComponent, _Component);
+
+  function ProfileComponent(props) {
+    var _this;
+
+    _classCallCheck(this, ProfileComponent);
+
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(ProfileComponent).call(this, props));
+    _this.state = {
+      arrowState: 'up'
+    };
+    return _this;
+  }
+
+  _createClass(ProfileComponent, [{
+    key: "render",
+    value: function render() {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "page-container"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "background-color"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "background-image-login"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "profile-div"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "profile-general-info"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "user-field"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+        htmlFor: "user-nick-name"
+      }, "Nickname"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        type: "text",
+        name: "user-nick-name",
+        placeholder: "Nickname"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "user-field"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+        htmlFor: "user-country"
+      }, "Country"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        type: "text",
+        name: "user-country",
+        placeholder: "Country"
+      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "profile-pubg-info"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "profile-game-info-header"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "game-info-header-title"
+      }, "Playerunknown's Battleground"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "game-info-header-arrow-pubg"
+      }, " ", this.state.arrowState === 'up' ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fas fa-chevron-up"
+      }) : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fas fa-chevron-down"
+      }), " ")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "profile-game-info-fields"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "user-field"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+        htmlFor: "in-game-name"
+      }, "In-game name"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        type: "text",
+        name: "in-game-name",
+        placeholder: "In-game name"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "user-field"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+        htmlFor: "friend-request-info"
+      }, "Required info for friend request"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        type: "text",
+        name: "friend-request-info",
+        placeholder: "info"
+      })))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "profile-csgo-info"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "profile-game-info-header"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "game-info-header-title"
+      }, "Counter-Strike Global Offensive"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "game-info-header-arrow-csgo"
+      }, " ", this.state.arrowState === 'up' ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fas fa-chevron-up"
+      }) : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fas fa-chevron-down"
+      }), " ")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "profile-game-info-fields"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "user-field"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+        htmlFor: "in-game-name"
+      }, "In-game name"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        type: "text",
+        name: "in-game-name",
+        placeholder: "In-game name"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "user-field"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+        htmlFor: "friend-request-info"
+      }, "Required info for friend request"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        type: "text",
+        name: "friend-request-info",
+        placeholder: "info"
+      })))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "profile-apex-legends-info"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "profile-smite-info"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "profile-hearthstone-info"
+      })));
+    }
+  }]);
+
+  return ProfileComponent;
+}(react__WEBPACK_IMPORTED_MODULE_0__["Component"]);
+
+
+
+/***/ }),
+
+/***/ "./resources/js/components/accountComponents/profileComponent.jsx":
+/*!************************************************************************!*\
+  !*** ./resources/js/components/accountComponents/profileComponent.jsx ***!
+  \************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return ProfileComponent; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+
+
+var ProfileComponent =
+/*#__PURE__*/
+function (_Component) {
+  _inherits(ProfileComponent, _Component);
+
+  function ProfileComponent(props) {
+    var _this;
+
+    _classCallCheck(this, ProfileComponent);
+
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(ProfileComponent).call(this, props));
+    _this.state = {
+      arrowState: 'up'
+    };
+    _this.openGameFields = _this.openGameFields.bind(_assertThisInitialized(_this));
+    return _this;
+  }
+
+  _createClass(ProfileComponent, [{
+    key: "openGameFields",
+    value: function openGameFields(e) {
+      var gameName = e.currentTarget.name;
+      var gameFieldsHeaderClass = ".profile-game-info-fields-" + gameName;
+      var arrowClass = ".game-info-header-arrow-" + gameName;
+      console.log(arrowClass);
+
+      if (jQuery(gameFieldsHeaderClass).css('height') === 'auto' || jQuery(gameFieldsHeaderClass).height() > 0) {
+        jQuery(gameFieldsHeaderClass).css({
+          height: '0'
+        });
+        jQuery(arrowClass).html("<i class='fas fa-chevron-down'></i>");
+      } else {
+        jQuery(gameFieldsHeaderClass).css({
+          height: 'auto'
+        });
+        jQuery(arrowClass).html("<i class='fas fa-chevron-up'></i>");
+      }
+    }
+  }, {
+    key: "componentWillMount",
+    value: function componentWillMount() {
+      if (this.props.isLoggedIn !== true) {
+        this.props.history.push('/');
+      }
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "page-container"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "background-color"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "background-image-login"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
+        className: "profile-div"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "profile-page-title"
+      }, this.props.user.username, " profile"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "info-area profile-general-info"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "user-field"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+        htmlFor: "user-nick-name"
+      }, "Nickname"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        type: "text",
+        name: "user-nick-name",
+        placeholder: "Nickname"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "user-field"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+        htmlFor: "user-country"
+      }, "Country"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        type: "text",
+        name: "user-country",
+        placeholder: "Country"
+      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "info-area"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "profile-game-info-header"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        type: "button",
+        name: "pubg",
+        onClick: this.openGameFields
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "game-info-header-title"
+      }, "Playerunknown's Battleground"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "game-info-header-arrow-default"
+      }, " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "game-info-header-arrow-pubg"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fas fa-chevron-down"
+      })), " ")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "profile-game-info-fields profile-game-info-fields-pubg"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "user-field"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+        htmlFor: "in-game-name"
+      }, "In-game name"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        type: "text",
+        name: "in-game-name",
+        placeholder: "In-game name"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "user-field"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+        htmlFor: "friend-request-info"
+      }, "Required info for friend request"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        type: "text",
+        name: "friend-request-info",
+        placeholder: "Info for friend request"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "user-field"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+        htmlFor: "pubg-solo-rank"
+      }, "Solo Avg. Damage"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        type: "text",
+        name: "pubg-solo-rank",
+        placeholder: "Solo rank"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "user-field"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+        htmlFor: "pubg-duo-rank"
+      }, "Duo Avg. Damage"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        type: "text",
+        name: "pubg-duo-rank",
+        placeholder: "Duo rank"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "user-field"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+        htmlFor: "pubg-squad-rank"
+      }, "Squad Avg. Damage"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        type: "text",
+        name: "pubg-squad-rank",
+        placeholder: "Squad rank"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "help-info"
+      }, "You can find information about your stats overhere --> ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        href: "https://pubg.op.gg/",
+        target: "_blank"
+      }, "https://pubg.op.gg/")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "info-area"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "profile-game-info-header"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        type: "button",
+        name: "csgo",
+        onClick: this.openGameFields
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "game-info-header-title"
+      }, "Counter-Strike Global Offensive"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "game-info-header-arrow-default game-info-header-arrow-csgo"
+      }, " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fas fa-chevron-down"
+      }), " ")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "profile-game-info-fields profile-game-info-fields-csgo"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "user-field"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+        htmlFor: "in-game-name"
+      }, "In-game name"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        type: "text",
+        name: "in-game-name",
+        placeholder: "In-game name"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "user-field"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+        htmlFor: "friend-request-info"
+      }, "Required info for friend request"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        type: "text",
+        name: "friend-request-info",
+        placeholder: "Info for friend request"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "user-field"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+        htmlFor: "matchmaking-rank"
+      }, "Matchmaking rank"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
+        name: "csgo-rank-select",
+        className: "csgo-rank-select"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+        value: "silver-1"
+      }, "Silver I"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+        value: "silver-2"
+      }, "Silver II"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+        value: "silver-3"
+      }, "Silver III"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+        value: "silver-4"
+      }, "Silver III"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+        value: "silver-5"
+      }, "Silver IV"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+        value: "silver-6"
+      }, "Silver Elite"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+        value: "silver-7"
+      }, "Silver Elite Master"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+        value: "gold-1"
+      }, "Gold Nova I"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+        value: "gold-2"
+      }, "Gold Nova II"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+        value: "gold-3"
+      }, "Gold Nova III"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+        value: "gold-4"
+      }, "Gold Nova Master"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+        value: "master-1"
+      }, "Master Guardian I"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+        value: "master-2"
+      }, "Master Guardian II"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+        value: "master-3"
+      }, "Master Guardian Elite"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+        value: "master-4"
+      }, "Distinguished Master Guardian"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+        value: "eagle-1"
+      }, "Legendary Eagle"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+        value: "eagle-2"
+      }, "Legendary Eagle Master"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+        value: "supreme"
+      }, "Supreme Master First Class"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+        value: "global"
+      }, "The Global Elite"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "user-field"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+        htmlFor: "faceit-rank"
+      }, "Faceit rank"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
+        name: "csgo-faceit-ranks",
+        className: "csgo-faceit-ranks"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+        value: "level-1"
+      }, "Level 1"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+        value: "level-2"
+      }, "Level 2"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+        value: "level-3"
+      }, "Level 3"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+        value: "level-4"
+      }, "Level 4"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+        value: "level-5"
+      }, "Level 5"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+        value: "level-6"
+      }, "Level 6"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+        value: "level-7"
+      }, "Level 7"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+        value: "level-8"
+      }, "Level 8"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+        value: "level-9"
+      }, "Level 9"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+        value: "level-10"
+      }, "Level 10"))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "info-area"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "profile-game-info-header"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        type: "button",
+        name: "apex_legends",
+        onClick: this.openGameFields
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "game-info-header-title"
+      }, "Apex Legends"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "game-info-header-arrow-default game-info-header-arrow-apex_legends"
+      }, " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fas fa-chevron-down"
+      }), " ")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "profile-game-info-fields profile-game-info-fields-apex_legends"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "user-field"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+        htmlFor: "in-game-name"
+      }, "In-game name"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        type: "text",
+        name: "in-game-name",
+        placeholder: "In-game name"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "user-field"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+        htmlFor: "friend-request-info"
+      }, "Required info for friend request"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        type: "text",
+        name: "friend-request-info",
+        placeholder: "Info for friend request"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "user-field"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+        htmlFor: "apex-legends-level"
+      }, "Apex Legends level"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        type: "text",
+        name: "apex-legends-level",
+        placeholder: "Apex Legends level"
+      })))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "info-area"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "profile-game-info-header"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        type: "button",
+        name: "smite",
+        onClick: this.openGameFields
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "game-info-header-title"
+      }, "Smite"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "game-info-header-arrow-default game-info-header-arrow-smite"
+      }, " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fas fa-chevron-down"
+      }), " ")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "profile-game-info-fields profile-game-info-fields-smite"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "user-field"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+        htmlFor: "in-game-name"
+      }, "In-game name"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        type: "text",
+        name: "in-game-name",
+        placeholder: "In-game name"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "user-field"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+        htmlFor: "friend-request-info"
+      }, "Required info for friend request"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        type: "text",
+        name: "friend-request-info",
+        placeholder: "Info for friend request"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "user-field"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+        htmlFor: "smite-season-rank"
+      }, "Current season rank"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        type: "text",
+        name: "smite-season-rank",
+        placeholder: "Current season rank"
+      })))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "info-area"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "profile-game-info-header"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        type: "button",
+        name: "hearthstone",
+        onClick: this.openGameFields
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "game-info-header-title"
+      }, "Hearthstone"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "game-info-header-arrow-default game-info-header-arrow-hearthstone"
+      }, " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fas fa-chevron-down"
+      }), " ")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "profile-game-info-fields profile-game-info-fields-hearthstone"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "user-field"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+        htmlFor: "in-game-name"
+      }, "In-game name"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        type: "text",
+        name: "in-game-name",
+        placeholder: "In-game name"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "user-field"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+        htmlFor: "friend-request-info"
+      }, "Required info for friend request"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        type: "text",
+        name: "friend-request-info",
+        placeholder: "Info for friend request"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "user-field"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+        htmlFor: "highest-recent-rank"
+      }, "Highest reached rank in 3 months"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        type: "text",
+        name: "highest-recent-rank",
+        placeholder: "Highest reached rank in 3 months"
+      }))))));
+    }
+  }]);
+
+  return ProfileComponent;
 }(react__WEBPACK_IMPORTED_MODULE_0__["Component"]);
 
 
@@ -80267,7 +80827,7 @@ function (_Component) {
         className: "streamers-table-header table-header"
       }, "About"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", {
         className: "streamers-table-header table-header"
-      }, "Expand")), this.state.showGameStreamers ? this.generateStreamersTable() : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
+      }, "More")), this.state.showGameStreamers ? this.generateStreamersTable() : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
         className: "streamers-table-data"
       }, "Select"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
         className: "streamers-table-data"
@@ -80735,16 +81295,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/es/index.js");
-/* harmony import */ var _assets_logos_pubg_logo_png__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../assets/logos/pubg_logo.png */ "./resources/assets/logos/pubg_logo.png");
-/* harmony import */ var _assets_logos_pubg_logo_png__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_assets_logos_pubg_logo_png__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _assets_logos_csgo_logo_png__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../assets/logos/csgo_logo.png */ "./resources/assets/logos/csgo_logo.png");
-/* harmony import */ var _assets_logos_csgo_logo_png__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_assets_logos_csgo_logo_png__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _assets_logos_smite_logo_png__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../assets/logos/smite_logo.png */ "./resources/assets/logos/smite_logo.png");
-/* harmony import */ var _assets_logos_smite_logo_png__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_assets_logos_smite_logo_png__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _assets_logos_apex_logo_png__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../assets/logos/apex_logo.png */ "./resources/assets/logos/apex_logo.png");
-/* harmony import */ var _assets_logos_apex_logo_png__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_assets_logos_apex_logo_png__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var _assets_logos_hearthstone_logo_2_png__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../assets/logos/hearthstone_logo_2.png */ "./resources/assets/logos/hearthstone_logo_2.png");
-/* harmony import */ var _assets_logos_hearthstone_logo_2_png__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_assets_logos_hearthstone_logo_2_png__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _assets_logos_pubg_logo_png__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../assets/logos/pubg_logo.png */ "./resources/assets/logos/pubg_logo.png");
+/* harmony import */ var _assets_logos_pubg_logo_png__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_assets_logos_pubg_logo_png__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _assets_logos_csgo_logo_png__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../assets/logos/csgo_logo.png */ "./resources/assets/logos/csgo_logo.png");
+/* harmony import */ var _assets_logos_csgo_logo_png__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_assets_logos_csgo_logo_png__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _assets_logos_smite_logo_png__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../assets/logos/smite_logo.png */ "./resources/assets/logos/smite_logo.png");
+/* harmony import */ var _assets_logos_smite_logo_png__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_assets_logos_smite_logo_png__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _assets_logos_apex_logo_png__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../assets/logos/apex_logo.png */ "./resources/assets/logos/apex_logo.png");
+/* harmony import */ var _assets_logos_apex_logo_png__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_assets_logos_apex_logo_png__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var _assets_logos_hearthstone_logo_2_png__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../assets/logos/hearthstone_logo_2.png */ "./resources/assets/logos/hearthstone_logo_2.png");
+/* harmony import */ var _assets_logos_hearthstone_logo_2_png__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_assets_logos_hearthstone_logo_2_png__WEBPACK_IMPORTED_MODULE_7__);
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -80755,13 +81317,14 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
 
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
 
 
 
@@ -80776,23 +81339,194 @@ var NewsPage =
 function (_Component) {
   _inherits(NewsPage, _Component);
 
-  function NewsPage() {
+  function NewsPage(props) {
+    var _this;
+
     _classCallCheck(this, NewsPage);
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(NewsPage).apply(this, arguments));
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(NewsPage).call(this, props));
+    _this.state = {
+      showPatches: false,
+      showNews: false,
+      whichSectionToShow: 'patches',
+      gameName: 'pubg',
+      patchesData: [],
+      newsData: []
+    };
+    _this.getPatchesCards = _this.getPatchesCards.bind(_assertThisInitialized(_this));
+    _this.createPatchesCards = _this.createPatchesCards.bind(_assertThisInitialized(_this));
+    _this.gameSelect = _this.gameSelect.bind(_assertThisInitialized(_this));
+    _this.contentSelect = _this.contentSelect.bind(_assertThisInitialized(_this));
+    _this.getNewsCards = _this.getNewsCards.bind(_assertThisInitialized(_this));
+    return _this;
   }
 
   _createClass(NewsPage, [{
-    key: "getH1Style",
-    value: function getH1Style() {
-      var h1Style = {
-        color: 'white'
-      };
-      return h1Style;
+    key: "gameSelect",
+    value: function gameSelect(gameName) {
+      var _this2 = this;
+
+      if (this.state.gameName == gameName) {
+        return;
+      }
+
+      var currentGameName = gameName;
+      var currentLiId = "#" + gameName + "-li-image"; // add current active game name
+
+      jQuery(currentLiId).addClass('active-game'); // check if there are other selected game and remove class
+
+      var pastId = "#" + this.state.gameName + "-li-image";
+
+      if (jQuery(pastId).hasClass('active-game')) {
+        jQuery(pastId).removeClass('active-game');
+      }
+
+      this.setState(function () {
+        _this2.state.gameName = currentGameName;
+
+        if (_this2.state.showPatches) {
+          _this2.getPatchesCards();
+        } else if (_this2.state.showNews) {
+          _this2.getNewsCards();
+        }
+      });
+    }
+  }, {
+    key: "contentSelect",
+    value: function contentSelect(currentSection) {
+      var _this3 = this;
+
+      var currentLiId = "#" + currentSection + "-content";
+      var pastId = "#" + this.state.whichSectionToShow + "-content"; // check if there are other selected game and remove class
+
+      if (currentSection != this.state.whichSectionToShow) {
+        if (jQuery(pastId).hasClass('active-content')) {
+          jQuery(pastId).removeClass('active-content');
+        }
+      }
+
+      jQuery(currentLiId).addClass('active-content'); // add current active game name
+
+      if (this.state.whichSectionToShow == currentSection) {
+        return;
+      }
+
+      currentSection;
+      this.setState(function () {
+        _this3.state.whichSectionToShow = currentSection;
+
+        _this3.getNewsCards();
+      });
+    }
+  }, {
+    key: "getPatchesCards",
+    value: function getPatchesCards() {
+      var _this4 = this;
+
+      var selectedGame = this.state.gameName;
+      var url = "http://megamer.build/api/patches/" + selectedGame;
+      axios__WEBPACK_IMPORTED_MODULE_2___default.a.get(url).then(function (json) {
+        if (json.request.statusText === 'OK') {
+          _this4.setState({
+            patchesData: json.data.data,
+            showPatches: true,
+            showNews: false
+          });
+        }
+      }).catch(function (error) {
+        console.log(error);
+      });
+    }
+  }, {
+    key: "createPatchesCards",
+    value: function createPatchesCards() {
+      var gamesPatches = this.state.patchesData;
+      var patchesCardTemp = [];
+      var i = 0;
+
+      for (i = 0; i < gamesPatches.length; i++) {
+        patchesCardTemp.push(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          key: gamesPatches[i].id,
+          className: "patch-card"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "patch-card-left-square"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          key: gamesPatches[i].patch_name,
+          className: "patch-name"
+        }, " ", gamesPatches[i].patch_name, " "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          key: gamesPatches[i].published_date,
+          className: "patch-publish-date"
+        }, " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Publish date - "), " ", gamesPatches[i].pusblished_date.split(" ", 1), " "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          key: gamesPatches[i].release_date,
+          className: "patch-release-date"
+        }, " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Release date - "), " ", gamesPatches[i].release_date.split(" ", 1), " ")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          key: gamesPatches[i].patch_content,
+          className: "patch-content"
+        }, " ", gamesPatches[i].patch_content, " "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          key: gamesPatches[i].resources_link,
+          className: "patch-resource-link"
+        }, " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "Resource link - "), " ", gamesPatches[i].resources_link, " ")));
+      }
+
+      return patchesCardTemp;
+    }
+  }, {
+    key: "getNewsCards",
+    value: function getNewsCards() {
+      var _this5 = this;
+
+      var selectedGame = this.state.gameName;
+      var url = "http://megamer.build/api/news/" + selectedGame;
+      axios__WEBPACK_IMPORTED_MODULE_2___default.a.get(url).then(function (json) {
+        if (json.request.statusText === 'OK') {
+          _this5.setState({
+            newsData: json.data.data,
+            showNews: true,
+            showPatches: false
+          });
+        }
+      }).catch(function (error) {
+        console.log(error);
+      });
+    }
+  }, {
+    key: "createNewsCards",
+    value: function createNewsCards() {
+      var gamesNews = this.state.newsData;
+      var newsCardsTemp = [];
+      var i = 0;
+
+      for (i = 0; i < gamesNews.length; i++) {
+        newsCardsTemp.push(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          key: gamesNews[i].id,
+          className: "news-card"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "news-card-left-square"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          key: gamesNews[i].news_name,
+          className: "news-name"
+        }, " ", gamesNews[i].news_name, " "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          key: gamesNews[i].pusblished_date,
+          className: "news-publish-date"
+        }, " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, " Publish date - "), " ", gamesNews[i].pusblished_date.split(' ', 1), " "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          key: gamesNews[i].event_start,
+          className: "news-release-date"
+        }, " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, " Event time - "), " ", gamesNews[i].event_start, " ")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          key: gamesNews[i].news_content,
+          className: "news-content"
+        }, " ", gamesNews[i].news_content, " "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          key: gamesNews[i].resources_link,
+          className: "news-resource-link"
+        }, " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, " Resource link - "), " ", gamesNews[i].resources_link, " ")));
+      }
+
+      return newsCardsTemp;
     }
   }, {
     key: "render",
     value: function render() {
+      var _this6 = this;
+
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "page-container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -80801,30 +81535,74 @@ function (_Component) {
         className: "background-image-news"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "games-choice-top-bar"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        src: _assets_logos_pubg_logo_png__WEBPACK_IMPORTED_MODULE_2___default.a,
-        alt: "pubg_logo"
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        src: _assets_logos_csgo_logo_png__WEBPACK_IMPORTED_MODULE_3___default.a,
-        alt: "pubg_logo"
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        src: _assets_logos_smite_logo_png__WEBPACK_IMPORTED_MODULE_4___default.a,
-        alt: "pubg_logo"
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        src: _assets_logos_apex_logo_png__WEBPACK_IMPORTED_MODULE_5___default.a,
-        alt: "pubg_logo"
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        src: _assets_logos_hearthstone_logo_2_png__WEBPACK_IMPORTED_MODULE_6___default.a,
-        alt: "pubg_logo"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+        className: "active-game",
+        id: "pubg-li-image"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        src: _assets_logos_pubg_logo_png__WEBPACK_IMPORTED_MODULE_3___default.a,
+        alt: "pubg_logo",
+        name: "pubg",
+        onClick: function onClick() {
+          return _this6.gameSelect('pubg');
+        }
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+        id: "csgo-li-image"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        src: _assets_logos_csgo_logo_png__WEBPACK_IMPORTED_MODULE_4___default.a,
+        alt: "csgo_logo",
+        name: "csgo",
+        onClick: function onClick() {
+          return _this6.gameSelect('csgo');
+        }
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+        id: "smite-li-image"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        src: _assets_logos_smite_logo_png__WEBPACK_IMPORTED_MODULE_5___default.a,
+        alt: "smite_logo",
+        name: "smite",
+        onClick: function onClick() {
+          return _this6.gameSelect('smite');
+        }
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+        id: "apex_legends-li-image"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        src: _assets_logos_apex_logo_png__WEBPACK_IMPORTED_MODULE_6___default.a,
+        alt: "apex_legends_logo",
+        name: "apex_legends",
+        onClick: function onClick() {
+          return _this6.gameSelect('apex_legends');
+        }
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+        id: "hearthstone-li-image"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        src: _assets_logos_hearthstone_logo_2_png__WEBPACK_IMPORTED_MODULE_7___default.a,
+        alt: "hearthstone_logo",
+        name: "hearthstone",
+        onClick: function onClick() {
+          return _this6.gameSelect('hearthstone');
+        }
       })))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "news-choice-side-bar"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
         className: "news-ul"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+        id: "patches-content",
+        className: "active-content",
+        onClick: function onClick() {
+          return _this6.contentSelect('patches');
+        }
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         href: "#"
-      }, " Patches ")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+      }, " Patches ")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+        id: "news-content",
+        onClick: function onClick() {
+          return _this6.contentSelect('news');
+        }
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         href: "#"
-      }, " Events ")))));
+      }, " Events ")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "appended-data"
+      }, this.state.whichSectionToShow == 'patches' ? this.state.showPatches ? this.createPatchesCards() : this.getPatchesCards() : this.state.showNews ? this.createNewsCards() : this.getNewsCards()));
     }
   }]);
 
@@ -80860,6 +81638,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _helpComponent__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./helpComponent */ "./resources/js/components/helpComponent.jsx");
 /* harmony import */ var _loginComponent__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./loginComponent */ "./resources/js/components/loginComponent.jsx");
 /* harmony import */ var _signupComponent__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./signupComponent */ "./resources/js/components/signupComponent.jsx");
+/* harmony import */ var _accountComponents_profileComponent__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./accountComponents/profileComponent */ "./resources/js/components/accountComponents/profileComponent.jsx");
+/* harmony import */ var _accountComponents_accountComponent__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./accountComponents/accountComponent */ "./resources/js/components/accountComponents/accountComponent.jsx");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
@@ -80879,6 +81659,8 @@ function _assertThisInitialized(self) { if (self === void 0) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+
 
 
 
@@ -81012,6 +81794,24 @@ function (_Component) {
         render: function render(props) {
           return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_signupComponent__WEBPACK_IMPORTED_MODULE_12__["default"], _extends({}, props, {
             login: _this2.login
+          }));
+        }
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
+        exact: true,
+        path: "/user-profile",
+        render: function render(props) {
+          return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_accountComponents_profileComponent__WEBPACK_IMPORTED_MODULE_13__["default"], _extends({}, props, {
+            isLoggedIn: _this2.state.isLoggedIn,
+            user: _this2.state.user
+          }));
+        }
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
+        exact: true,
+        path: "/user-account",
+        render: function render(props) {
+          return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_accountComponents_accountComponent__WEBPACK_IMPORTED_MODULE_14__["default"], _extends({}, props, {
+            isLoggedIn: _this2.state.isLoggedIn,
+            user: _this2.state.user
           }));
         }
       })));

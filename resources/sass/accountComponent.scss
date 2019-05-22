@@ -1,0 +1,130 @@
+@keyframes fieldsDropdown{
+    from {height: 0;}
+    to {height: auto;}
+}
+
+.profile-div{
+
+    width: 80%;
+    height: auto;
+    color: lightgrey;
+    font-family: $font_family_content;
+    position: relative;
+    border: 1px solid $background_color_dark;
+    border-radius: 8px;
+    background-color: rgba(41,33,33,0.5);
+
+    margin: 5% 0 0 10%;
+    padding: 1rem 2rem;
+
+    .profile-page-title{
+        width: 100%;
+        height: auto;
+        padding: 16px 32px;
+        text-align: center;
+        font-size: $font_big_title;
+        font-family: $font_family_header;
+        font-variant: small-caps;
+    }
+
+    .profile-general-info{
+
+        .user-field{
+
+            label{
+                padding: 0.5rem;
+                min-width: 30%;
+            }
+
+            input{
+                padding: 0.5rem;
+                min-width: 50%;
+                background-color: $background_color_dark;
+                opacity: 0.5;
+                color: white;
+                border-radius: 4px;
+
+                &:focus{
+                    border-color: $background_color_dark;
+                }
+            }
+        }
+    }
+
+    .info-area{
+        padding: 1rem 0;
+
+        .profile-game-info-header{
+            cursor: pointer;
+            border-radius: 4px;
+            padding: 4px 0;
+
+            input {
+                width: 100%;
+                background: none;
+                border: none;
+                position: absolute;
+
+                &:focus{
+                    outline: none;
+                }
+            }
+
+            &:hover{
+                background-color: rgba(255,255,255,0.1);
+            }
+
+            .game-info-header-title{
+                padding: 0.5rem;
+            }
+
+            .game-info-header-arrow-default{
+                margin-left: 2rem;
+            }
+        }
+
+        .profile-game-info-fields{
+            height: 0;
+            transition: 0.25s ease-in-out;
+            overflow: hidden;
+
+            .user-field{
+                padding: 0.5rem;
+
+                label{
+                    min-width: 30%;
+                    margin-left: 1rem;
+                }
+
+                input, select{
+                    padding: 0.5rem;
+                    min-width: 50%;
+                    background-color: $background_color_dark;
+                    opacity: 0.5;
+                    color: white;
+                    border-radius: 4px;
+
+                    &:active{
+                        border-color: $background_color_dark;
+                    }
+
+                    &:focus{
+                        outline: white;
+                    }
+                }
+            }
+
+            .help-info{
+                margin-top: 16px;
+                padding: 0 16px;
+                font-style: italic;
+                font-size: $font_very_small_text;
+                a{
+                    color: $accent_color;
+                }
+            }
+        }
+
+    }
+
+}

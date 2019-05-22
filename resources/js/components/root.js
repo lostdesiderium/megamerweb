@@ -16,6 +16,8 @@ import FpPage from './fpComponent';
 import HelpPage from './helpComponent';
 import LoginPage from './loginComponent';
 import SignupPage from './signupComponent';
+import ProfileComponent from './accountComponents/profileComponent';
+import AccountSettingsComponent from './accountComponents/accountComponent';
 
 export default class Root extends Component {
     constructor(props) {
@@ -74,7 +76,7 @@ export default class Root extends Component {
             <Router topNavBarNeedsUpdate={this.topNavBarNeedsUpdate}>
                 <div className="container-fluid">
                     <SideNavbar/>
-                    <TopNavbar isLoggedIn={this.state.isLoggedIn} topNavBarNeedsUpdate={this.topNavBarNeedsUpdate} user={this.state.user}  />
+                    <TopNavbar isLoggedIn={this.state.isLoggedIn} topNavBarNeedsUpdate={this.topNavBarNeedsUpdate} user={this.state.user}/>
 
                     <Route exact path="/" component={LandingPage}/>
                     <Route exact path="/home" component={LandingPage}/>
@@ -85,6 +87,8 @@ export default class Root extends Component {
                     <Route exact path="/help" component={HelpPage}/>
                     <Route exact path="/login" render={ (props) => <LoginPage {...props} login={this.login} /> }/>
                     <Route exact path="/signup" render={ (props) => <SignupPage {...props} login={this.login} /> }/>
+                    <Route exact path="/user-profile" render={ (props) => <ProfileComponent {...props} isLoggedIn={this.state.isLoggedIn} user={this.state.user}/> } />
+                    <Route exact path="/user-account" render={ (props) => <AccountSettingsComponent {...props} isLoggedIn={this.state.isLoggedIn} user={this.state.user}/> } />
                 </div>
             </Router>
         );

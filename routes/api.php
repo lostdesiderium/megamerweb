@@ -53,5 +53,7 @@ Route::group(['users/middleware' => 'api-header'], function () {
     Route::post('user/login', 'UserController@login');
     Route::post('user/register', 'UserController@register');
     Route::get('streamers/{game_name}', 'StreamersController@index');
+    Route::get('patches/{game_name}', 'GamesPatchesController@index');
+    Route::get('news/{game_name}', 'GamesNewsController@index');
 });
 //----------- USERS APIs END ---------------

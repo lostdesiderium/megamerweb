@@ -75,6 +75,10 @@ img {
     }
 }
 
+.active{
+    color: white !important;
+}
+
 // Fonts
 @import url('https://fonts.googleapis.com/css?family=Nunito');
 
@@ -92,3 +96,4 @@ img {
 @import 'signupComponent';
 @import 'gamesComponent';
 @import 'newsComponent';
+@import 'accountComponent';
