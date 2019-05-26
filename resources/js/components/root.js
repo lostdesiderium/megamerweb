@@ -83,7 +83,7 @@ export default class Root extends Component {
                     <Route exact path="/games" component={GamesPage}/>
                     <Route exact path="/news" component={NewsPage}/>
                     <Route exact path="/tournaments" component={TournamentsPage}/>
-                    <Route exact path="/fp" component={FpPage}/>
+                    <Route exact path="/fp" render={ (props) => <FpPage  {...props} isLoggedIn={this.state.isLoggedIn} user={this.state.user} /> }/>
                     <Route exact path="/help" component={HelpPage}/>
                     <Route exact path="/login" render={ (props) => <LoginPage {...props} login={this.login} /> }/>
                     <Route exact path="/signup" render={ (props) => <SignupPage {...props} login={this.login} /> }/>

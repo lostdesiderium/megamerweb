@@ -112,21 +112,19 @@
             .content-link{
                 z-index: 1000;
                 padding: 8px 16px;
+                padding: 8px 24px;
+                height: 100%;
+                width: 100%;
+                font-size: 50px;
+                color: $accent_color;
+                text-align: center;
+                cursor: pointer;
+                border-radius: 4px;
 
-                a{
-                    padding: 8px 24px;
-                    height: 100%;
-                    width: 100%;
-                    font-size: 50px;
-                    color: $accent_color;
-                    text-align: center;
-                    cursor: pointer;
-
-                    &:hover{
-                        background-color: rgba(255,255,255,0.35);
-                        cursor:pointer;
-                        text-decoration: none;
-                    }
+                &:hover{
+                    background-color: rgba(255,255,255,0.1);
+                    cursor:pointer;
+                    text-decoration-style: none;
                 }
 
             }

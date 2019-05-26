@@ -44,6 +44,11 @@ Route::group(['middleware' => ['jwt.auth','api-header']], function () {
 
     // Delete user
     Route::delete('users/removeUser', 'UserController@destroy');
+
+    // List all users metas
+    Route::post('users/updateUserMeta', 'UsersMetaController@store');
+    Route::get('users/getUserMeta/{id}', 'UsersMetaController@show');
+    Route::get('users/getAllUsersMeta', 'UsersMetaController@index');
 });
 Route::group(['users/middleware' => 'api-header'], function () {
 

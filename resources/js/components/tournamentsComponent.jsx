@@ -1,22 +1,18 @@
 import React, { Component } from 'react';
+import Component404 from './404component';
 
 export default class TournamentsPage extends Component{
-
-    getH1Style(){
-        var h1Style = {
-            color: 'white',
-        }
-
-        return h1Style;
-    }
 
     render(){
         return (
             <div className="page-container">
-                <h1 style={{color: 'black'}}>Tournaments page </h1>
+                <div className="background-color"></div>
+                <div className="background-image-signup"></div>
+
+                <Component404 />
             </div>
         );
     };
 
-    
+
 }

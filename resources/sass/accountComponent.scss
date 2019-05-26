@@ -15,7 +15,9 @@
     background-color: rgba(41,33,33,0.5);
 
     margin: 5% 0 0 10%;
-    padding: 1rem 2rem;
+    padding: 0 2rem;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
 
     .profile-page-title{
         width: 100%;
@@ -36,7 +38,7 @@
                 min-width: 30%;
             }
 
-            input{
+            input, select{
                 padding: 0.5rem;
                 min-width: 50%;
                 background-color: $background_color_dark;
@@ -47,6 +49,19 @@
                 &:focus{
                     border-color: $background_color_dark;
                 }
+            }
+            .input-checkbox{
+
+            }
+        }
+
+        .help-info{
+            margin-top: 16px;
+            padding: 0 16px;
+            font-style: italic;
+            font-size: $font_very_small_text;
+            a{
+                color: $accent_color;
             }
         }
     }

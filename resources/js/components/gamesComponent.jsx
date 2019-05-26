@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {NavLink} from 'react-router-dom';
 import {Row, Col, Button, Tab} from 'react-bootstrap';
 import PubgBackground from '../../assets/backgrounds/pubg_background_1920x1080.jpg';
 import SmiteBackground from '../../assets/backgrounds/smite_background_1920x1080.jpg';
@@ -62,10 +63,16 @@ export default class GamesPage extends Component{
             var twitchPlayerURL = usersData[i].twitch_player_url + "&autoplay=false";
             output.push(<tr id={usersData[i].id}>
                 <td key={usersData[i].streamer_name} className="streamers-table-data"> {usersData[i].streamer_name} </td>
-                <td key={usersData[i].youtube_link} className="streamers-table-data"> <a href={usersData[i].youtube_link} target="_blank">{usersData[i].streamer_name} YouTube</a> </td>
-                <td key={usersData[i].twitch_link} className="streamers-table-data"> <a href={usersData[i].twitch_link} target="_blank">{usersData[i].streamer_name} TwitchTV </a> </td>
+                <td key={usersData[i].youtube_link} className="streamers-table-data">
+                    <a href={usersData[i].youtube_link} target="_blank">{usersData[i].streamer_name} YouTube</a>
+                </td>
+                <td key={usersData[i].twitch_link} className="streamers-table-data">
+                    <a href={usersData[i].twitch_link} target="_blank">{usersData[i].streamer_name} TwitchTV </a>
+                </td>
                 <td key={usersData[i].about_streamer} className="streamers-table-data"> {usersData[i].about_streamer} </td>
-                <td key={usersData[i].id} className={expandClass}> <input type="button" name={usersData[i].streamer_name} value="+" onClick={this.expandRow}/> </td>
+                <td key={usersData[i].id} className={expandClass}> <input type="button"
+                    name={usersData[i].streamer_name} value="+" onClick={this.expandRow}/>
+                </td>
             </tr>);
             output.push(<tr><td colSpan={5} style={{align: "center"}}><iframe id={streamerName} className={hiddenElementClass} src={twitchPlayerURL} height="400" width="480" allowFullScreen={true}> </iframe></td></tr>);
         }
@@ -104,8 +111,10 @@ export default class GamesPage extends Component{
                                 <img className="game-card-background" src={PubgBackground} alt="pubg_background"/>
                                 <div className="game-card-popup">
                                     <div className="game-card-title content-title">Playeruknown's battlegrounds </div>
-                                    <input className="game-card-btn" type="submit" name="game-card-btn-find-mate" value="Find a playmate" />
-                                    <input className="game-card-btn" type="submit" name="game-card-btn-read-more" value="Content/Streamers" onClick={ () => this.gameContentSelect('pubg')} />
+                                    <NavLink exact to="/fp"><input className="game-card-btn" type="submit"
+                                    name="game-card-btn-find-mate" value="Find a playmate" /></NavLink>
+                                    <input className="game-card-btn" type="submit" name="game-card-btn-read-more"
+                                    value="Content/Streamers" onClick={ () => this.gameContentSelect('pubg')} />
                                 </div>
 
                             </div>
@@ -115,8 +124,10 @@ export default class GamesPage extends Component{
                                 <img className="game-card-background" src={CsgoBackground} alt="csgo_background"/>
                                 <div className="game-card-popup">
                                     <div className="game-card-title content-title"> Counter-Strike Global Offensive </div>
-                                    <input className="game-card-btn" type="submit" name="game-card-btn-find-mate" value="Find a playmate" />
-                                    <input className="game-card-btn" type="submit" name="game-card-btn-read-more" value="Content/Streamers" onClick={ () => this.gameContentSelect('csgo')} />
+                                    <NavLink exact to="/fp"><input className="game-card-btn" type="submit" name="game-card-btn-find-mate"
+                                    value="Find a playmate" /></NavLink>
+                                    <input className="game-card-btn" type="submit" name="game-card-btn-read-more"
+                                    value="Content/Streamers" onClick={ () => this.gameContentSelect('csgo')} />
                                 </div>
                             </div>
                         </Col>
@@ -125,8 +136,10 @@ export default class GamesPage extends Component{
                                 <img className="game-card-background" src={HearthstoneBackground} alt="hearthstone_background"/>
                                 <div className="game-card-popup">
                                     <div className="game-card-title content-title"> Hearthstone </div>
-                                    <input className="game-card-btn" type="submit" name="game-card-btn-find-mate" value="Find a playmate"/>
-                                    <input className="game-card-btn" type="submit" name="game-card-btn-read-more" value="Content/Streamers" onClick={ () => this.gameContentSelect('hearthstone')} />
+                                    <NavLink exact to="/fp"><input className="game-card-btn" type="submit"
+                                    name="game-card-btn-find-mate" value="Find a playmate"/></NavLink>
+                                    <input className="game-card-btn" type="submit" name="game-card-btn-read-more"
+                                    value="Content/Streamers" onClick={ () => this.gameContentSelect('hearthstone')} />
                                 </div>
                             </div>
                         </Col>
@@ -136,8 +149,10 @@ export default class GamesPage extends Component{
                                 <img className="game-card-background" src={ApexBackground} alt="apex_background"/>
                                 <div className="game-card-popup">
                                     <div className="game-card-title content-title"> Apex Legends </div>
-                                    <input className="game-card-btn" type="submit" name="game-card-btn-find-mate" value="Find a playmate"/>
-                                    <input className="game-card-btn" type="submit" name="game-card-btn-read-more" value="Content/Streamers" onClick={ () => this.gameContentSelect('apex_legends')} />
+                                    <NavLink exact to="/fp"><input className="game-card-btn" type="submit" name="game-card-btn-find-mate"
+                                    value="Find a playmate"/></NavLink>
+                                    <input className="game-card-btn" type="submit" name="game-card-btn-read-more"
+                                    value="Content/Streamers" onClick={ () => this.gameContentSelect('apex_legends')} />
                                 </div>
                             </div>
                         </Col>
@@ -146,8 +161,10 @@ export default class GamesPage extends Component{
                                 <img className="game-card-background" src={SmiteBackground} alt="smite_background"/>
                                 <div className="game-card-popup">
                                     <div className="game-card-title content-title"> Smite </div>
-                                    <input className="game-card-btn" type="submit" name="game-card-btn-find-mate" value="Find a playmate"/>
-                                    <input className="game-card-btn" type="submit" name="game-card-btn-read-more" value="Content/Streamers" onClick={ () => this.gameContentSelect('smite')} />
+                                    <NavLink exact to="/fp"><input className="game-card-btn" type="submit" name="game-card-btn-find-mate"
+                                    value="Find a playmate"/></NavLink>
+                                    <input className="game-card-btn" type="submit" name="game-card-btn-read-more"
+                                    value="Content/Streamers" onClick={ () => this.gameContentSelect('smite')} />
                                 </div>
                             </div>
                         </Col>

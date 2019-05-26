@@ -15,63 +15,37 @@ export default class ProfileComponent extends Component {
                 <div className="background-color"></div>
                 <div className="background-image-login"></div>
 
-                <div className="profile-div">
+                <section className="profile-div">
                     <div className="profile-general-info">
                         <div className="user-field">
-                            <label htmlFor="user-nick-name">Nickname</label>
-                            <input type="text" name="user-nick-name" placeholder="Nickname"/>
+                            <label htmlFor="profile-current-password">Current password</label>
+                            <input type="text" name="profile-current-password" placeholder="Current password"/>
                         </div>
                         <div className="user-field">
-                            <label htmlFor="user-country">Country</label>
-                            <input type="text" name="user-country" placeholder="Country"/>
+                            <label htmlFor="profile-new-password">New password</label>
+                            <input type="text" name="profile-new-password" placeholder="New password"/>
+                        </div>
+                        <div className="user-field">
+                            <label htmlFor="profile-repeat-new-password">Repeat new password</label>
+                            <input type="text" name="profile-repeat-new-password" placeholder="Repeat new password"/>
                         </div>
                     </div>
 
-                    <div className="profile-pubg-info">
-                        <div className="profile-game-info-header">
-                            <span className="game-info-header-title">Playerunknown's Battleground</span>
-                            <span className="game-info-header-arrow-pubg"> {this.state.arrowState === 'up' ? <i className="fas fa-chevron-up"></i> : <i className="fas fa-chevron-down"></i>} </span>
-                        </div>
-                        <div className="profile-game-info-fields">
-                            <div className="user-field">
-                                <label htmlFor="in-game-name">In-game name</label>
-                                <input type="text" name="in-game-name" placeholder="In-game name"/>
-                            </div>
-                            <div className="user-field">
-                                <label htmlFor="friend-request-info">Required info for friend request</label>
-                                <input type="text" name="friend-request-info" placeholder="info"/>
-                            </div>
+                    <div className="submit-button-wrapper">
+                        <input className="submit-button" type="submit" name="user-reset-password" value="Reset password"
+                        onClick={this.handleProfileUpdate} />
+                    </div>
+                </section>
+
+                <section className="profile-div">
+                    <div className="profile-general-info">
+                        <div className="user-field">
+                            <label htmlFor="user-profile-private">Make profile private</label>
+                            <input className="input-checkbox" type="checkbox" name="user-profile-private" value="" checked="false" />
                         </div>
                     </div>
-                    <div className="profile-csgo-info">
-                        <div className="profile-game-info-header">
-                            <span className="game-info-header-title">Counter-Strike Global Offensive</span>
-                            <span className="game-info-header-arrow-csgo"> {this.state.arrowState === 'up' ? <i className="fas fa-chevron-up"></i> : <i className="fas fa-chevron-down"></i>} </span>
-                        </div>
-                        <div className="profile-game-info-fields">
-                            <div className="user-field">
-                                <label htmlFor="in-game-name">In-game name</label>
-                                <input type="text" name="in-game-name" placeholder="In-game name"/>
-                            </div>
-                            <div className="user-field">
-                                <label htmlFor="friend-request-info">Required info for friend request</label>
-                                <input type="text" name="friend-request-info" placeholder="info"/>
-                            </div>
-                        </div>
-                    </div>
+                </section>
 
-                    <div className="profile-apex-legends-info">
-
-                    </div>
-
-                    <div className="profile-smite-info">
-
-                    </div>
-
-                    <div className="profile-hearthstone-info">
-
-                    </div>
-                </div>
             </div>
         );
     }
