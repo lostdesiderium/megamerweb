@@ -85,7 +85,6 @@ export default class SingupPage extends Component{
 
         if(password.length >= 8){
 
-            console.log('password - ' + password + ' repeatPassword - ' + repeatPassword);
             if( password === repeatPassword ){
 
                 var pwRegExp = /(.*[A-Z].*)(.*[a-z].*)(.*\d.*)(.*[\!\*\.\+#&$%\^\?_-].*)/g;
@@ -174,19 +173,22 @@ export default class SingupPage extends Component{
                     })*/
                 }
                 else{
-                    jQuery(".singup-btn")
+                    jQuery(".signup-btn")
                     .removeAttr("disabled")
-                    .html("Login");
+                    .html("Sign up");
                 }
             }).catch(error => {
                 alert(`An Error Occured! ${error}`);
-                jQuery(".singup-btn")
+                jQuery(".signup-btn")
                 .removeAttr("disabled")
                 .html("Sign up");
             });
         }
         else{
             this.state.errorMsg = validationResponse;
+            jQuery(".signup-btn")
+            .removeAttr("disabled")
+            .html("Sign up");
         }
 
 

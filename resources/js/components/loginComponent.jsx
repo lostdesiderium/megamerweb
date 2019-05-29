@@ -67,10 +67,11 @@ export default class LoginPage extends Component{
             loginFormData.append('emailOrUsername', this.state.emailOrUsername);
             loginFormData.append('password', this.state.password);
 
-            var validationResponse = this.validateForm(this.state.emailOrUsername.trim(), this.state.password.trim() );
+            var validationResponse = this.validateForm(this.state.emailOrUsername, this.state.password.trim() );
 
             if(validationResponse === true){
                 Axios.post(uri, loginFormData).then( (response) => {
+                    console.log(response);
                     return response;
                 })
                 .then(json => {

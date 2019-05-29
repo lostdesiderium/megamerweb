@@ -128,13 +128,13 @@ class UserController extends Controller
     public function login(Request $request)
     {
         if( strpos($request->emailOrUsername, '@') !== false ){
-            $user = User::where('email', $request->email)->get()->first();
+            $user = User::where('email', $request->emailOrUsername)->get()->first();
             if ($user && Hash::check($request->password, $user->password)) // The passwords match...
             {
                 $token = self::getToken($request->emailOrUsername, $request->password);
                 $user->auth_token = $token;
                 $user->save();
-                $response = ['success'=>true, 'data'=>['id'=>$user->id,'auth_token'=>$user->auth_token,'email'=>$user->email]];
+                $response = ['success'=>true, 'data'=>['id'=>$user->id,'username'=>$user->username, 'auth_token'=>$user->auth_token,'email'=>$user->email]];
             }
             else
             $response = ['success'=>false, 'data'=>'Record doesnt exists'];
@@ -148,7 +148,7 @@ class UserController extends Controller
                 $token = self::getToken($request->emailOrUsername, $request->password);
                 $user->auth_token = $token;
                 $user->save();
-                $response = ['success'=>true, 'data'=>['id'=>$user->id,'auth_token'=>$user->auth_token,'username'=>$user->username]];
+                $response = ['success'=>true, 'data'=>['id'=>$user->id, 'email'=>$user->email, 'auth_token'=>$user->auth_token,'username'=>$user->username]];
             }
             else
             $response = ['success'=>false, 'data'=>'Record doesnt exists'];

@@ -82522,7 +82522,7 @@ function (_Component) {
       if (dataArrayInJSX.length == 0) {
         dataArrayInJSX.push(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "not-found"
-        }, "Sorry, but we could not find anyone with similar profile like your, try another game!"));
+        }, "Sorry, but we could not find anyone with similar profile like yours, try another game!"));
       }
 
       return dataArrayInJSX;
@@ -82734,7 +82734,7 @@ function (_Component) {
         }, " Smite current season rank "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
           className: "user-info-piece"
         }, " ", userData.smite_season_rank, " ")))));
-      } else if (this.state.selectedGame == 'hearhstone') {
+      } else if (this.state.selectedGame == 'hearthstone') {
         userJSX.push(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "user-info-popup"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -82888,7 +82888,7 @@ function (_Component) {
             showMessage: false
           });
 
-          _this5.props.history.push('/'); // If user is not logged in redirect him to login page
+          _this5.props.history.push('/login'); // If user is not logged in redirect him to login page
 
         }, 2000);
       }
@@ -83625,10 +83625,11 @@ function (_Component) {
       var loginFormData = new FormData();
       loginFormData.append('emailOrUsername', this.state.emailOrUsername);
       loginFormData.append('password', this.state.password);
-      var validationResponse = this.validateForm(this.state.emailOrUsername.trim(), this.state.password.trim());
+      var validationResponse = this.validateForm(this.state.emailOrUsername, this.state.password.trim());
 
       if (validationResponse === true) {
         axios__WEBPACK_IMPORTED_MODULE_3___default.a.post(uri, loginFormData).then(function (response) {
+          console.log(response);
           return response;
         }).then(function (json) {
           if (json.data.success) {
@@ -84712,8 +84713,6 @@ function (_Component) {
       }
 
       if (password.length >= 8) {
-        console.log('password - ' + password + ' repeatPassword - ' + repeatPassword);
-
         if (password === repeatPassword) {
           var pwRegExp = /(.*[A-Z].*)(.*[a-z].*)(.*\d.*)(.*[\!\*\.\+#&$%\^\?_-].*)/g;
 
@@ -84785,14 +84784,15 @@ function (_Component) {
             })*/
 
           } else {
-            jQuery(".singup-btn").removeAttr("disabled").html("Login");
+            jQuery(".signup-btn").removeAttr("disabled").html("Sign up");
           }
         }).catch(function (error) {
           alert("An Error Occured! ".concat(error));
-          jQuery(".singup-btn").removeAttr("disabled").html("Sign up");
+          jQuery(".signup-btn").removeAttr("disabled").html("Sign up");
         });
       } else {
         this.state.errorMsg = validationResponse;
+        jQuery(".signup-btn").removeAttr("disabled").html("Sign up");
       }
     }
   }, {

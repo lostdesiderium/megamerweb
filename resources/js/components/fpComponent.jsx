@@ -153,7 +153,7 @@ export default class FpPage extends Component{
             );
         }
         if(dataArrayInJSX.length == 0){
-            dataArrayInJSX.push(<div className="not-found">Sorry, but we could not find anyone with similar profile like your, try another game!</div>);
+            dataArrayInJSX.push(<div className="not-found">Sorry, but we could not find anyone with similar profile like yours, try another game!</div>);
         }
 
         return dataArrayInJSX;
@@ -313,7 +313,7 @@ export default class FpPage extends Component{
             </div>
         </div> );
         }
-        else if(this.state.selectedGame == 'hearhstone'){
+        else if(this.state.selectedGame == 'hearthstone'){
             userJSX.push(<div className="user-info-popup">
             <div className="user-info-background" onClick={ () => {
                         this.setState({
@@ -426,7 +426,7 @@ export default class FpPage extends Component{
                 this.setState({
                     showMessage: false,
                 });
-                this.props.history.push('/'); // If user is not logged in redirect him to login page
+                this.props.history.push('/login'); // If user is not logged in redirect him to login page
             }, 2000);
         }
     }
